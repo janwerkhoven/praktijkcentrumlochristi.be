@@ -1,4 +1,4 @@
-# Praktijk Centrum Lochristi (PCL)
+# Praktijk Centrum Lochristi
 
 ## What
 Homepage of a medical clinic in Lochristi, Belgium (www.praktijkcentrumlochristi.be).
