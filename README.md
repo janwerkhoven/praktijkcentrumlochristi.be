@@ -1,4 +1,4 @@
-# Praktijk Centrum Lochristi (PCL)
+# Praktijk Centrum Lochristi
 
 ## What
 Homepage of a medical clinic in Lochristi, Belgium (www.praktijkcentrumlochristi.be).
@@ -10,4 +10,4 @@ Joomla CMS, HTML, CSS, JS, Photoshop, Illustrator
 Developed by Jan Werkhoven (www.nabu.io)
 
 ## When
-2011
+Built in 2011
