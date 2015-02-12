@@ -62,9 +62,9 @@ components/
 configuration.php
 configuration.php-dist
 google2dbd407974c11f6a.html
-images/
+
 includes/
-index.html
+
 index.php
 index2.php
 indexx.html
@@ -73,10 +73,9 @@ language/
 libraries/
 logo.jpg
 logs/
-maintenance.jpg
-media/
-modules/
-plugins/
+
+
+
 robots.txt
 templates/beez/
 templates/index.html

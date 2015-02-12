@@ -1,0 +1,150 @@
+/* (C) 2007 YOOtheme.com */
+
+/* login */
+span.niftydefault span.yoo-login span.login {
+	width: 139px;
+	margin: auto;
+}
+
+span.niftydefault span.yoo-login span.login span.username,
+span.niftydefault span.yoo-login span.login span.password {
+	margin-bottom: 6px;
+	width: 109px;
+	height: 16px;
+	padding: 6px 5px 2px 25px;
+	overflow: hidden;
+}
+
+span.niftydefault span.yoo-login span.login span.username {
+	background: url(styles/niftydefault/images/username_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+span.niftydefault span.yoo-login span.login span.password {
+	background: url(styles/niftydefault/images/password_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+span.niftydefault span.yoo-login span.login span.username:hover {
+	background: url(styles/niftydefault/images/username_bg.png) 0 -24px no-repeat;
+}
+
+span.niftydefault span.yoo-login span.login span.password:hover {
+	background: url(styles/niftydefault/images/password_bg.png) 0 -24px no-repeat;
+}
+
+span.niftydefault span.yoo-login span.login span.username input,
+span.niftydefault span.yoo-login span.login span.password input {
+	padding: 0px;
+	width: 100%;
+	background: none;
+	border: none;
+	outline: none;
+	float: left;
+	color: #646464;
+	font-size: 11px;
+}
+
+span.niftydefault span.yoo-login span.login span.username input:hover,
+span.niftydefault span.yoo-login span.login span.password input:hover,
+span.niftydefault span.yoo-login span.login span.username input:focus,
+span.niftydefault span.yoo-login span.login span.password input:focus {
+	color: #000000;
+}
+
+span.niftydefault span.yoo-login span.login span.remember {
+	margin-bottom: 6px;
+	padding: 0px 2px 0px 2px;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-container {
+	margin-bottom: 6px;
+	padding: 0px 2px 0px 2px;
+	width: 135px;
+	overflow: hidden;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-icon {
+	width: 50px;
+	height: 20px;
+	background: url(styles/niftydefault/images/button_bg.png) 0 0 no-repeat; /* ie6png:crop */
+	float: right;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-icon:hover {
+	background: url(styles/niftydefault/images/button_bg.png) 0 -20px no-repeat;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-icon button {
+	display: block;
+	padding: 0px 0px 0px 0px;
+	width: 100%;
+	height: 20px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	overflow: hidden;
+	font-size: 11px;
+	line-height: 20px;
+	color: #646464;
+	text-transform: lowercase;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-icon button:hover {
+	color: #000000;
+}
+
+span.niftydefault span.yoo-login span.login span.login-button-text button {
+	float: right;
+	cursor: pointer;
+}
+
+span.niftydefault span.yoo-login span.login span.lostpassword,
+span.niftydefault span.yoo-login span.login span.lostusername,
+span.niftydefault span.yoo-login span.login span.registration {
+	height: 20px;
+	line-height: 20px;
+}
+
+/* logout */
+span.niftydefault span.yoo-login span.logout {
+	width: auto;
+	margin: auto;
+}
+
+span.niftydefault span.yoo-login span.logout span.greeting {
+}
+
+span.niftydefault span.yoo-login span.logout span.logout-button-icon {
+	margin: auto;
+	width: 50px;
+	height: 20px;
+	background: url(styles/niftydefault/images/button_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+span.niftydefault span.yoo-login span.logout span.logout-button-icon:hover {
+	background: url(styles/niftydefault/images/button_bg.png) 0 -20px no-repeat;
+}
+
+span.niftydefault span.yoo-login span.logout span.logout-button-icon button {
+	display: block;
+	padding: 0px 0px 0px 0px;
+	width: 100%;
+	height: 20px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	overflow: hidden;
+	font-size: 11px;
+	line-height: 20px;
+	color: #646464;
+	text-transform: lowercase;
+}
+
+span.niftydefault span.yoo-login span.logout span.logout-button-icon button:hover {
+	color: #000000;
+}
+
+span.niftydefault span.yoo-login span.logout span.logout-button-text button {
+	margin: auto;
+	display: block;
+	cursor: pointer;
+}

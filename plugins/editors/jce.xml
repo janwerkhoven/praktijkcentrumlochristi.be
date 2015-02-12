@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="editors" method="upgrade">
+    <name>Editor - JCE</name>
+    <version>1.5.7.6</version>
+    <creationDate>10 November 2010</creationDate>
+    <author>Ryan Demmer</author>
+    <authorEmail>info@joomlacontenteditor.net</authorEmail>
+    <authorUrl>http://www.joomlacontenteditor.net</authorUrl>
+    <copyright>2006-2010 Ryan Demmer</copyright>
+    <license>GNU/GPL Version 2 - http://www.gnu.org/licenses/gpl-2.0.html</license>
+    <description>JCE EDITOR DESC</description>
+    <files>
+    	<file plugin="jce">jce.php</file>
+    	<folder>jce</folder>
+	</files>
+	<params>
+		<param type="spacer" default="EDITOR PARAMS DESC" />
+	</params>
+	<languages>
+		<language tag="en-GB">en-GB.plg_editors_jce.ini</language>
+	</languages>
+</install>

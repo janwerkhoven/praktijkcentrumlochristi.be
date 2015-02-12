@@ -1,0 +1,9 @@
+/* (C) 2007 YOOtheme.com */
+
+span.quick span.yoo-login span.login span.login-button-icon button,
+span.quick span.yoo-login span.login span.lostpassword a,
+span.quick span.yoo-login span.login span.lostusername a,
+span.quick span.yoo-login span.login span.registration a,
+span.quick span.yoo-login span.logout span.logout-button-icon button {
+	position: relative;
+}

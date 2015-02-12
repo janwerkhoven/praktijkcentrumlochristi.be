@@ -1,0 +1,8 @@
+/* (C) 2007 YOOtheme.com */
+
+span.niftydefault span.yoo-login span.login span.username input,
+span.niftydefault span.yoo-login span.login span.password input,
+span.niftydefault span.yoo-login span.login span.login-button-icon button,
+span.niftydefault span.yoo-login span.logout span.logout-button-icon button {
+	position: relative;
+}

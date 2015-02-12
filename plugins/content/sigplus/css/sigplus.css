@@ -1,0 +1,104 @@
+/*!
+* @file
+* @brief    sigplus Image Gallery Plus image gallery stylesheet
+* @author   Levente Hunyadi
+* @version  1.3.1
+* @remarks  Copyright (C) 2009-2010 Levente Hunyadi
+* @remarks  Licensed under GNU/GPLv3, see http://www.gnu.org/licenses/gpl-3.0.html
+* @see      http://hunyadi.info.hu/projects/sigplus
+*/
+
+/*
+* User-definable image gallery stylesheet rules.
+* Rules in this section should be changed as needed.
+*/
+
+/* images */
+div.sigplus-gallery ul > li {
+margin:0 !important;
+border:0 none transparent !important;
+padding:0 !important;
+}
+
+div.sigplus-gallery ul > li > img,
+div.sigplus-gallery ul > li > a > img {
+margin:2px !important;
+border:0 none transparent !important;
+padding:0 !important;
+}
+
+div.example div.sigplus-gallery ul > li {
+margin:4px !important;
+border:1px solid blue !important;
+padding:2px !important;
+}
+
+/* images (an example with margin, border and padding) */
+div.example div.sigplus-gallery ul > li > img,
+div.example div.sigplus-gallery ul > li > a > img {
+margin:4px !important;
+border:thin solid gray !important;
+padding:2px !important;
+}
+
+/* images on mouse hover (an example) */
+div.example div.sigplus-gallery ul > li > a:hover > img {
+margin:4px !important;
+border:thin solid red !important;
+padding:2px !important;
+}
+
+/*
+* Generic image gallery stylesheet rules.
+* Rules in this section should normally be left as they are.
+*/
+
+/* image gallery alignment */
+div.sigplus-center > * {
+float:none !important;
+clear:both !important;
+margin:0 auto !important;
+text-align:center !important;  /* for flow layout */
+}
+
+div.sigplus-left {
+text-align:left !important;  /* for flow layout */
+}
+
+div.sigplus-right {
+text-align:right !important;  /* for flow layout */
+}
+
+div.sigplus-left.sigplus-float > * {
+float:left !important;
+}
+
+div.sigplus-left.sigplus-clear > * {
+margin:0 auto 0 0 !important;
+}
+
+div.sigplus-right.sigplus-float > * {
+float:right !important;
+}
+
+div.sigplus-right.sigplus-clear > * {
+margin: 0 0 0 auto !important;
+}
+
+/* flow layout */
+div.sigplus-gallery > ul {
+display:block !important;
+margin:0 !important;
+padding:0 !important;
+list-style-type:none !important;
+list-style-image:none !important;
+}
+
+div.sigplus-gallery > ul > li {
+display:inline-block !important;
+margin:0 !important;
+padding:0 !important;
+background:transparent none no-repeat scroll 0 0 !important;
+text-align:center !important;
+vertical-align:middle !important;
+}

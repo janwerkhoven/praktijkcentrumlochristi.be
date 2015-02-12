@@ -1,0 +1,9 @@
+/* CSS style - Core Design Web Gallery plugin for Joomla! 1.5 - UI Gallery */
+
+#uigallery {
+	text-align: center;
+}
+
+.ui-dialog-buttonpane .counter {
+	float: left;
+}

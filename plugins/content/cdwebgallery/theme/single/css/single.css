@@ -1,0 +1,19 @@
+/* CSS style - Core Design Web Gallery plugin for Joomla! 1.5 */
+
+/* Theme: single */
+
+/* Link with image thumbnail */
+.webgallery .webgallery_single {
+	/* empty */
+}
+
+/* Image thumbnail */
+.webgallery .webgallery_single img {
+	padding: 1px;
+	border: 1px solid gray;
+}
+
+/* Hover image thumbnail */
+.webgallery .webgallery_single:hover img {
+	border: 1px solid silver;
+}

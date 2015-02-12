@@ -1,0 +1,8 @@
+/* (C) 2007 YOOtheme.com */
+
+a:focus { outline: none; }
+
+span.yoo-login,
+span.yoo-login span {
+	display: block;
+}

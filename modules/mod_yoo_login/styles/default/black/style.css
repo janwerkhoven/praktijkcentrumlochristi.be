@@ -1,0 +1,25 @@
+/* (C) 2007 YOOtheme.com */
+
+/* login */
+.yootools-black span.default span.yoo-login span.login span.username {
+	background: url(styles/default/black/images/username_bg.png) 0 0 no-repeat;
+}
+
+.yootools-black span.default span.yoo-login span.login span.password {
+	background: url(styles/default/black/images/password_bg.png) 0 0 no-repeat;
+}
+
+.yootools-black span.default span.yoo-login span.login span.username:hover {
+	background: url(styles/default/black/images/username_bg.png) 0 -20px no-repeat;
+}
+
+.yootools-black span.default span.yoo-login span.login span.password:hover {
+	background: url(styles/default/black/images/password_bg.png) 0 -20px no-repeat;
+}
+
+.yootools-black span.default span.yoo-login span.login span.username input:hover,
+.yootools-black span.default span.yoo-login span.login span.password input:hover,
+.yootools-black span.default span.yoo-login span.login span.username input:focus,
+.yootools-black span.default span.yoo-login span.login span.password input:focus {
+	color: #ffffaa;
+}

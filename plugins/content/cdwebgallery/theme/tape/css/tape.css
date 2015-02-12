@@ -1,0 +1,63 @@
+/* CSS style - Core Design Web Gallery plugin for Joomla! 1.5 */
+
+/* Theme: tape */
+
+/* Gallery container */
+.webgallery .webgallery_tape {
+}
+
+/* Gallery cleaner */
+.webgallery hr.webgallery_clr {
+	clear:both;
+   height:1px;
+   margin: -1px 0 0 0;
+	padding:0;
+   border:none;
+   visibility: hidden;
+   display: block;
+}
+
+/* Thumbnails */
+.webgallery .webgallery_tape .thumb {
+	margin: 8px;
+	padding: 0;
+	float: left;
+	position: relative;
+}
+
+/* Thumbnail image */
+.webgallery .webgallery_tape .thumb img {
+	background: #fff;
+	border: solid 1px #ccc;
+	padding: 4px;
+}
+
+/* Thumbnail link arround */
+.webgallery .webgallery_tape .thumb a {
+	text-decoration: none;
+}
+
+/* Image - tape */
+.webgallery .webgallery_tape .thumb a span {
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	z-index: 1;
+	width: 78px;
+	height: 28px;
+	margin-left: -37px;
+	background: transparent url(../images/tape.png) top left no-repeat;
+}
+/* Image - tape - hover */
+.webgallery .webgallery_tape .thumb a:hover span {
+	background: transparent url(../images/tape.png) bottom left no-repeat;
+}
+
+/* Title displayed bellow thumbnail */
+.webgallery .webgallery_tape .thumb span {
+	font-size: 90%;
+	font-style: italic;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}

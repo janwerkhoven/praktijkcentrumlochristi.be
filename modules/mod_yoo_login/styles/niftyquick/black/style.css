@@ -1,0 +1,75 @@
+/* (C) 2007 YOOtheme.com */
+
+/* login */
+.yootools-black span.niftyquick span.yoo-login span.login span.username {
+	background: url(styles/niftyquick/black/images/username_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.password {
+	background: url(styles/niftyquick/black/images/password_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.username:hover {
+	background: url(styles/niftyquick/black/images/username_bg.png) 0 -24px no-repeat;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.password:hover {
+	background: url(styles/niftyquick/black/images/password_bg.png) 0 -24px no-repeat;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.username input,
+.yootools-black span.niftyquick span.yoo-login span.login span.password input {
+	color: #646464;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.username input:hover,
+.yootools-black span.niftyquick span.yoo-login span.login span.password input:hover,
+.yootools-black span.niftyquick span.yoo-login span.login span.username input:focus,
+.yootools-black span.niftyquick span.yoo-login span.login span.password input:focus {
+	color: #ffffaa;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.login-button {
+	background: url(styles/niftyquick/black/images/button_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.login-button:hover {
+	background: url(styles/niftyquick/black/images/button_bg.png) 0 -20px no-repeat;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.login-button button {
+	color: #646464;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.login-button button:hover {
+	color: #ffffaa;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.lostpassword {
+	background: url(styles/niftyquick/black/images/lost_password_bg.png) 0 0px no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.lostusername {
+	background: url(styles/niftyquick/black/images/lost_username_bg.png) 0 0px no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.login span.registration {
+	background: url(styles/niftyquick/black/images/registration_bg.png) 0 0px no-repeat; /* ie6png:crop */
+}
+
+/* logout */
+.yootools-black span.niftyquick span.yoo-login span.logout span.logout-button {
+	background: url(styles/niftyquick/black/images/button_bg.png) 0 0 no-repeat; /* ie6png:crop */
+}
+
+.yootools-black span.niftyquick span.yoo-login span.logout span.logout-button:hover {
+	background: url(styles/niftyquick/black/images/button_bg.png) 0 -20px no-repeat;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.logout span.logout-button button {
+	color: #646464;
+}
+
+.yootools-black span.niftyquick span.yoo-login span.logout span.logout-button button:hover {
+	color: #ffffaa;
+}
