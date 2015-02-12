@@ -421,6 +421,8 @@ ul.art-menu {
     height: 32px;
     cursor: pointer;
     text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .art-menu ul li {
@@ -517,6 +519,7 @@ ul.art-menu {
     border-style: solid;
     border-color: #CCC;
     border-top-width: 0px;
+    font-weight: normal;
 }
 
 .art-nav ul.art-menu ul span, .art-nav ul.art-menu ul span span {
@@ -1971,14 +1974,7 @@ iframe {
 }
 
 .menu-btn {
-    position: fixed;
-    z-index: 5;
-    width: 40px;
-    height: 40px;
-    right: 10px;
-    top: 10px;
-    background: red;
-    cursor: pointer;
+    display: none;
 }
 
 @media (max-width: 752px) {
@@ -2008,6 +2004,16 @@ iframe {
         width: 100%;
         min-width: 320px;
     }
+    .menu-btn {
+        display: block;
+        position: fixed;
+        z-index: 5;
+        width: 47px;
+        height: 36px;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
     .art-nav {
         position: fixed;
         right: 0;
@@ -2017,16 +2023,19 @@ iframe {
         height: 100%;
         overflow-x: hidden;
         overflow-y: hidden;
-        -webkit-transition: all 400ms ease-out;
-        -moz-transition: all 400ms ease-out;
-        -o-transition: all 400ms ease-out;
-        transition: all 400ms ease-out;
+        -webkit-transition: background 400ms ease-out;
+        -moz-transition: background 400ms ease-out;
+        -o-transition: background 400ms ease-out;
+        transition: background 400ms ease-out;
+    }
+    .art-nav.wide {
+        width: 100%;
     }
     .nav-open .art-nav {
         background: rgba(0, 0, 0, 0.5);
         background: rgba(255, 255, 255, 0.5);
         overflow-y: scroll;
-        width: 100%;
+        /*width: 100%;*/
     }
     .art-nav .l,
     .art-nav .r {
@@ -2187,4 +2196,95 @@ iframe {
     -moz-transition: all 600ms ease-out;
     -o-transition: all 600ms ease-out;
     transition: all 600ms ease-out;
+}
+
+/* BURGER */
+
+html {
+    font-size: 9px;
+}
+
+.lines-button {
+    display: inline-block;
+    padding: 1.75rem 0.875rem;
+    padding: 2.2rem 0.875rem;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0.5rem;
+    background: none;
+    border: 0;
+    outline: 0;
+    background: RGBA(0, 0, 0, 0.1);
+}
+
+.lines-button:hover {
+    opacity: 1;
+}
+
+.lines-button:active {
+    transition: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.lines {
+    display: inline-block;
+    width: 3.5rem;
+    height: 0.5rem;
+    background: #808080;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+.lines:before, .lines:after {
+    display: inline-block;
+    width: 3.5rem;
+    height: 0.5rem;
+    background: #808080;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    content: '';
+    transform-origin: 0.25rem center;
+}
+
+.lines:before {
+    top: 0.875rem;
+}
+
+.lines:after {
+    top: -0.875rem;
+}
+
+.lines-button:hover {
+    opacity: 1;
+}
+
+.lines-button:hover .lines:before {
+    top: 1rem;
+}
+
+.lines-button:hover .lines:after {
+    top: -1rem;
+}
+
+.lines-button.x.close .lines {
+    background: transparent;
+}
+
+.lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+    transform-origin: 50% 50%;
+    top: 0;
+    width: 3.5rem;
+    background-color: white;
+}
+
+.lines-button.x.close .lines:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+}
+
+.lines-button.x.close .lines:after {
+    transform: rotate3d(0, 0, 1, -45deg);
 }

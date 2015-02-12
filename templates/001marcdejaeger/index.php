@@ -46,7 +46,9 @@ artxComponentWrapper($document);
           </div>
       </div>
       <div class="menu-btn">
-        
+<button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x">
+          <span class="lines"></span>
+        </button>
       </div>
     </header>
 

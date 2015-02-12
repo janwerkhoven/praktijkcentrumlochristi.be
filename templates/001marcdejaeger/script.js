@@ -436,10 +436,19 @@ artLoadEvent.add(function() {
 	artButtonsSetupJsHover("readmore");
 });
 
+/* Mobile navigation*/
 
 $(document).ready(function() {
 	$('header .menu-btn').on('click', function() {
 		if (!$('html').hasClass('nav-animating')) {
+			if ($('html').hasClass('nav-open')) {
+				setTimeout(function() {
+					$('.art-nav').removeClass('wide');
+				}, 500);
+			} else {
+				$('.art-nav').addClass('wide');
+			};
+			$('.menu-btn button').toggleClass('close');
 			$('html').toggleClass('nav-open').addClass('nav-animating');
 			setTimeout(function() {
 				$('html').removeClass('nav-animating');
@@ -448,7 +457,11 @@ $(document).ready(function() {
 	});
 	$('html').on('click', function() {
 		if (!$('html').hasClass('nav-animating')) {
+			$('.menu-btn button').removeClass('close');
 			$('html').removeClass('nav-open');
+			setTimeout(function() {
+				$('.art-nav').removeClass('wide');
+			}, 500);
 		};
 	});
 	$('.art-nav-center').on('click', function(e) {
