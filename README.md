@@ -10,4 +10,5 @@ Joomla CMS, HTML, CSS, JS, Photoshop, Illustrator
 Developed by Jan Werkhoven (www.nabu.io)
 
 ## When
-Built in 2011
+* Built in 2011
+* Mobile responsive makeover in 2015
