@@ -2,14 +2,14 @@
 /**
  * Core Design Login module for Joomla! 1.5
  * @author		Daniel Rataj, <info@greatjoomla.com>
- * @package		Joomla 
+ * @package		Joomla
  * @subpackage	Content
  * @category	Module
  * @version		1.1.8
  * @copyright	Copyright (C) 2007 - 2010 Great Joomla!, http://www.greatjoomla.com
  * @license		http://www.gnu.org/copyleft/gpl.html GNU/GPL 3
- * 
- * This file is part of Great Joomla! extension.   
+ *
+ * This file is part of Great Joomla! extension.
  * This extension is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -90,17 +90,17 @@ if (!class_exists('JScriptegrator')) {
 
 <?php
 	$document = &JFactory::getDocument(); // set document for next usage
-	
+
 	$document->addScriptDeclaration("
 	hs.Expander.prototype.onAfterExpand = function () {
 		document.getElementById('modlgn_username').focus();
 	};
 	");
-	
+
 	// openid
 	if(JPluginHelper::isEnabled('authentication', 'openid')) {
 		$lang->load( 'plg_authentication_openid', JPATH_ADMINISTRATOR );
-		
+
 		$document->addScriptDeclaration(
 			'var JLanguage = {};'.
 			' JLanguage.WHAT_IS_OPENID = \''.JText::_( 'WHAT_IS_OPENID' ).'\';'.
@@ -109,7 +109,7 @@ if (!class_exists('JScriptegrator')) {
 			' var cd_modlogin = 1;'
 		);
 	}
-	
+
 ?>
 <?php echo $params->get('url'); ?>
 <?php echo $params->get('pretext'); ?>
@@ -124,7 +124,7 @@ if (!class_exists('JScriptegrator')) {
 <ul class="<?php echo $params->get('p_class'); ?>">
 	<li>Website door <a href="http://nabu.io" target="_new" title="Nabu Websites">NABU</a><span>|</span></li>
 	<li><a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html-loginform', wrapperClassName: 'mod_cd_login', outlineType: '<?php echo $outlineType; ?>', align: '<?php echo $align; ?>', anchor: '<?php echo $anchor; ?>', dimmingOpacity: <?php echo $dimmingOpacity; ?>, slideshowGroup: 'mod_cd_login_loginform' } )" title="<?php echo JText::_('CD_LOGIN_MODULE_TITLE'); ?>">Login website</a><span>|</span></li>
-	<li><a href="http://agenda.sanmax.be/access_public.php?dcode=21447" target="_blank">Login agenda</a></li>
+	<li><a href="http://sanmax.afsprakenbeheer.be/" target="_blank">Login agenda</a></li>
 </div>
 
 <!--
