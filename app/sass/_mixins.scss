@@ -1,0 +1,84 @@
+// MIXINS
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow($values) {
+  -webkit-box-shadow: $values;
+  box-shadow: $values;
+}
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin clearfix {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+@mixin prevent-user-select {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -moz-transform: $values;
+  -ms-transform: $values;
+  -o-transform: $values;
+  transform: $values;
+}
+@mixin transform-origin($values) {
+  -moz-transform-origin: $values;
+  -webkit-transform-origin: $values;
+  -ms-transform-origin: $values;
+  transform-origin: $values;
+}
+@mixin transform-style($values) {
+  -webkit-transform-style: $values;
+  -moz-transform-style: $values;
+  -ms-transform-style: $values;
+  transform-style: $values;
+}
+@mixin perspective($values) {
+  -webkit-perspective: $values;
+  -moz-perspective: $values;
+  perspective: $values;
+}
+@mixin backface-visibility($values) {
+  -webkit-backface-visibility: $values;
+  -moz-backface-visibility: $values;
+  -ms-backface-visibility: $values;
+  backface-visibility: $values;
+}
+@mixin transition($values) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $fromColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
+  background-image: -moz-linear-gradient(top, $fromColor, $toColor);
+  background-image: -ms-linear-gradient(top, $fromColor, $toColor);
+  background-image: -o-linear-gradient(top, $fromColor, $toColor);
+  background-image: linear-gradient(to bottom, $fromColor, $toColor);
+  background-repeat: repeat-x;
+  filter:progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 1.33dppx) {
+    @content;
+  }
+}
