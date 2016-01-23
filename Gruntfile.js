@@ -17,15 +17,15 @@ module.exports = function(grunt) {
     },
     watch: {
       handlebars: {
-        files: ['app/templates/**/*.hbs', 'app/templates/**/*.json', 'app/templates/layout.html '],
+        files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
         tasks: 'handlebarslayouts'
       },
       sass: {
-        files: ['app/sass/**/*.scss'],
+        files: ['src/sass/**/*.scss'],
         tasks: ['sass']
       },
       js: {
-        files: ['app/js/**/*.js'],
+        files: ['src/js/**/*.js'],
         tasks: ['jshint', 'concat', 'uglify']
       },
       gruntfile: {
@@ -40,15 +40,15 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'app/templates/',
+          cwd: 'src/templates/',
           src: ['**/*.hbs', '!partials/*'],
           dest: 'dist/',
           ext: '.html',
         }],
         options: {
-          partials: ['app/templates/partials/*.hbs', 'app/templates/layout.html'],
-          basePath: 'app/templates/',
-          modules: ['app/templates/helpers/helpers-*.js'],
+          partials: ['src/templates/partials/*.hbs', 'src/templates/layout.html'],
+          basePath: 'src/templates/',
+          modules: ['src/templates/helpers/helpers-*.js'],
           context: {
             title: 'MOSHI MOSH <%= grunt.filename %>',
             projectName: 'Grunt handlebars layout',
@@ -68,12 +68,12 @@ module.exports = function(grunt) {
           noCache: true
         },
         files: {
-          'dist/assets/css/main.min.css': 'app/sass/main.scss'
+          'dist/assets/css/main.min.css': 'src/sass/main.scss'
         }
       }
     },
     jshint: {
-      files: ['app/js/*.js'],
+      files: ['src/js/*.js'],
       options: {
         globals: {
           jQuery: true,
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
         separator: ';\n\n',
       },
       dist: {
-        src: ['app/js/libs/jquery.js', 'app/js/libs/velocity.js', 'app/js/libs/modernizr.js', 'app/js/main.js'],
+        src: ['src/js/libs/jquery.js', 'src/js/libs/velocity.js', 'src/js/libs/modernizr.js', 'src/js/main.js'],
         dest: 'dist/assets/js/main.js',
       },
     },
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
       main: {
         files: [{
           expand: true,
-          cwd: 'public/',
+          cwd: 'src/public/',
           src: ['**'],
           dest: 'dist/'
         }]
