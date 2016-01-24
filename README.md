@@ -19,3 +19,9 @@ The [website](http://www.praktijkcentrumlochristi.be/) of a medical centre in Lo
 
 #### Contact
 Get in touch on [LinkedIn](https://au.linkedin.com/pub/jan-werkhoven/10/64/b30), [GitHub](https://github.com/janwerkhoven) or <a href="mailto:jan@nabu.io">jan@nabu.io</a>.
+
+-
+
+**Jan Werkhoven**  
+Web Developer  
+& UI Designer
