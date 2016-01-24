@@ -3,7 +3,9 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     connect: {
       server: {
         options: {
@@ -15,6 +17,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       handlebars: {
         files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
@@ -36,6 +39,7 @@ module.exports = function(grunt) {
         livereload: true,
       }
     },
+
     handlebarslayouts: {
       dist: {
         files: [{
@@ -61,17 +65,24 @@ module.exports = function(grunt) {
         }
       }
     },
+
     sass: {
       dist: {
         options: {
           style: 'compressed',
+          sourcemap: 'none',
           noCache: true
         },
-        files: {
-          'dist/assets/css/main.min.css': 'src/sass/main.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: 'src/styles/',
+          src: ['**/**.scss'],
+          dest: 'dist/assets/css/',
+          ext: '.min.css'
+        }]
       }
     },
+
     jshint: {
       files: ['src/js/*.js'],
       options: {
@@ -83,15 +94,18 @@ module.exports = function(grunt) {
         }
       }
     },
+
     concat: {
       options: {
         separator: ';\n\n',
       },
       dist: {
-        src: ['src/js/libs/jquery.js', 'src/js/libs/velocity.js', 'src/js/libs/modernizr.js', 'src/js/main.js'],
-        dest: 'dist/assets/js/main.js',
+        files: {
+          'dist/assets/js/main.js': ['src/js/vendor/jquery.min.js', 'src/js/main.js']
+        },
       },
     },
+
     uglify: {
       dist: {
         files: {
@@ -99,11 +113,13 @@ module.exports = function(grunt) {
         }
       }
     },
+
     clean: {
-      build: {
+      dist: {
         src: ['dist/']
       }
     },
+
     copy: {
       main: {
         files: [{
