@@ -1,12 +1,12 @@
 {
-  "name": "tandarts-bakker",
+  "name": "praktijkcentrumlochristi",
   "version": "2.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:janwerkhoven/tandarts-bakker.nl.git"
+    "url": "git@github.com:janwerkhoven/praktijkcentrumlochristi.be.git"
   },
   "private": true,
-  "copyright": "https://github.com/janwerkhoven/tandarts-bakker.nl/blob/master/COPYRIGHT.md",
+  "copyright": "https://github.com/janwerkhoven/praktijkcentrumlochristi.be/blob/production/COPYRIGHT.md",
   "devDependencies": {
     "async": "^1.0.0",
     "grunt": "^0.4.5",
