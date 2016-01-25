@@ -129,7 +129,16 @@ module.exports = function(grunt) {
           dest: 'dist/'
         }]
       }
+    },
+
+    sitemap: {
+      dist: {
+        pattern: ['**/*.html'],
+        siteRoot: 'dist/',
+        homepage: 'http://www.praktijkcentrumlochristi.be/'
+      }
     }
+
   });
 
   // load tasks
@@ -143,10 +152,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-sitemap');
 
   // commands
   grunt.registerTask('default', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'connect', 'watch']);
-  grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify']);
+  grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'sitemap']);
   grunt.registerTask('server', ['connect', 'watch']);
+  grunt.registerTask('sitemap', ['sitemap']);
 
 };

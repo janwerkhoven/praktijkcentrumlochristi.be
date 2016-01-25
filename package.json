@@ -20,6 +20,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-handlebars-layouts": "^0.2.0",
     "grunt-html-prettyprinter": "^1.5.0",
+    "grunt-sitemap": "^1.2.1",
     "grunt-static-handlebars": "^0.9.0",
     "handlebars-helpers": "^0.5.8"
   }
