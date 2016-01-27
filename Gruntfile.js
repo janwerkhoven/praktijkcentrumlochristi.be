@@ -64,13 +64,9 @@ module.exports = function(grunt) {
           sourcemap: 'none',
           noCache: true
         },
-        files: [{
-          expand: true,
-          cwd: 'src/styles/',
-          src: ['**/**.scss'],
-          dest: 'dist/assets/css/',
-          ext: '.min.css'
-        }]
+        files: {
+          'dist/assets/css/main.min.css': ['src/styles/main.scss']
+        }
       }
     },
 
@@ -171,8 +167,8 @@ module.exports = function(grunt) {
 
   // commands
   grunt.registerTask('default', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'connect', 'watch']);
-  grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'sitemap']);
+  grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify']);
   grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('sitemap', ['sitemap_xml']);
+  grunt.registerTask('sitemap', ['xml_sitemap']);
 
 };
