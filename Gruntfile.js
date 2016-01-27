@@ -52,16 +52,7 @@ module.exports = function(grunt) {
         options: {
           partials: ['src/templates/partials/*.hbs', 'src/templates/layout.html'],
           basePath: 'src/templates/',
-          modules: ['src/templates/helpers/helpers-*.js'],
-          context: {
-            title: 'MOSHI MOSH <%= grunt.filename %>',
-            projectName: 'Grunt handlebars layout',
-            items: [
-              'apple',
-              'orange',
-              'banana'
-            ]
-          }
+          modules: ['src/templates/helpers/helpers-*.js']
         }
       }
     },
@@ -131,13 +122,36 @@ module.exports = function(grunt) {
       }
     },
 
-    sitemap: {
-      dist: {
-        pattern: ['**/*.html'],
-        siteRoot: 'dist/',
-        homepage: 'http://www.praktijkcentrumlochristi.be/'
+    xml_sitemap: {
+      custom_options: {
+        options: {
+          siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+          changefreq: 'weekly',
+          priority: '0.8',
+          dest: 'dist/'
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: ['**/*.html', '!**/google2dbd407974c11f6a.html'],
+          dest: 'dist/sitemap.xml'
+        }]
       }
-    }
+    },
+
+    sitemap_xml: {
+      options: {
+        siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+        changefreq: 'weekly',
+        priority: '0.8',
+        dest: 'dist/'
+      },
+      files: [{
+        cwd: 'dist/',
+        src: '{,**/}*.html',
+        dest: 'dist/sitemap.xml'
+      }]
+    },
 
   });
 
@@ -152,12 +166,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-sitemap');
+  grunt.loadNpmTasks('grunt-sitemap-xml');
+  grunt.loadNpmTasks('grunt-xml-sitemap');
 
   // commands
   grunt.registerTask('default', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'connect', 'watch']);
   grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'sitemap']);
   grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('sitemap', ['sitemap']);
+  grunt.registerTask('sitemap', ['sitemap_xml']);
 
 };
