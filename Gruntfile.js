@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         tasks: 'handlebarslayouts'
       },
       sass: {
-        files: ['src/sass/**/*.scss'],
+        files: ['src/styles/**/*.scss'],
         tasks: ['sass']
       },
       js: {
@@ -70,8 +70,24 @@ module.exports = function(grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('pixrem')(),
+          require('autoprefixer')({
+            browsers: ['> 1% in BE']
+          }),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'dist/assets/css/main.min.css'
+      }
+    },
+
     jshint: {
-      files: ['src/js/*.js'],
+      files: ['src/js/main.js'],
       options: {
         globals: {
           jQuery: true,
@@ -82,28 +98,31 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      dist: {
+        files: {
+          'temp/main.min.js': ['src/js/main.js']
+        }
+      }
+    },
+
     concat: {
       options: {
         separator: ';\n\n',
       },
       dist: {
         files: {
-          'dist/assets/js/main.js': ['src/js/vendor/jquery.min.js', 'src/js/main.js']
+          'dist/assets/js/main.min.js': ['src/js/vendor/jquery.min.js', 'temp/main.min.js']
         },
       },
-    },
-
-    uglify: {
-      dist: {
-        files: {
-          'dist/assets/js/main.min.js': ['dist/assets/js/main.js']
-        }
-      }
     },
 
     clean: {
       dist: {
         src: ['dist/']
+      },
+      temp: {
+        src: ['temp/']
       }
     },
 
@@ -118,36 +137,36 @@ module.exports = function(grunt) {
       }
     },
 
-    xml_sitemap: {
-      custom_options: {
-        options: {
-          siteRoot: 'http://www.praktijkcentrumlochristi.be/',
-          changefreq: 'weekly',
-          priority: '0.8',
-          dest: 'dist/'
-        },
-        files: [{
-          expand: true,
-          cwd: 'dist/',
-          src: ['**/*.html', '!**/google2dbd407974c11f6a.html'],
-          dest: 'dist/sitemap.xml'
-        }]
-      }
-    },
-
-    sitemap_xml: {
-      options: {
-        siteRoot: 'http://www.praktijkcentrumlochristi.be/',
-        changefreq: 'weekly',
-        priority: '0.8',
-        dest: 'dist/'
-      },
-      files: [{
-        cwd: 'dist/',
-        src: '{,**/}*.html',
-        dest: 'dist/sitemap.xml'
-      }]
-    },
+    // xml_sitemap: {
+    //   custom_options: {
+    //     options: {
+    //       siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+    //       changefreq: 'weekly',
+    //       priority: '0.8',
+    //       dest: 'dist/'
+    //     },
+    //     files: [{
+    //       expand: true,
+    //       cwd: 'dist/',
+    //       src: ['**/*.html', '!**/google2dbd407974c11f6a.html'],
+    //       dest: 'dist/sitemap.xml'
+    //     }]
+    //   }
+    // },
+    //
+    // sitemap_xml: {
+    //   options: {
+    //     siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+    //     changefreq: 'weekly',
+    //     priority: '0.8',
+    //     dest: 'dist/'
+    //   },
+    //   files: [{
+    //     cwd: 'dist/',
+    //     src: '{,**/}*.html',
+    //     dest: 'dist/sitemap.xml'
+    //   }]
+    // }
 
   });
 
@@ -157,18 +176,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-handlebars-layouts");
   grunt.loadNpmTasks('grunt-html-prettyprinter');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-sitemap-xml');
-  grunt.loadNpmTasks('grunt-xml-sitemap');
+  // grunt.loadNpmTasks('grunt-sitemap-xml');
+  // grunt.loadNpmTasks('grunt-xml-sitemap');
 
   // commands
-  grunt.registerTask('default', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify', 'connect', 'watch']);
-  grunt.registerTask('build', ['clean', 'copy', 'handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify']);
-  grunt.registerTask('server', ['connect', 'watch']);
-  grunt.registerTask('sitemap', ['xml_sitemap']);
+  grunt.registerTask('default', ['build', 'serve']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  grunt.registerTask('serve', ['connect', 'watch']);
+  // grunt.registerTask('sitemap', ['xml_sitemap']);
 
 };

@@ -9,6 +9,8 @@
   "copyright": "https://github.com/janwerkhoven/praktijkcentrumlochristi.be/blob/production/COPYRIGHT.md",
   "devDependencies": {
     "async": "^1.0.0",
+    "autoprefixer": "^6.3.1",
+    "cssnano": "^3.4.0",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
@@ -20,9 +22,11 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-handlebars-layouts": "^0.2.0",
     "grunt-html-prettyprinter": "^1.5.0",
+    "grunt-postcss": "^0.7.1",
     "grunt-sitemap-xml": "^0.1.2",
     "grunt-static-handlebars": "^0.9.0",
     "grunt-xml-sitemap": "^0.2.0",
-    "handlebars-helpers": "^0.5.8"
+    "handlebars-helpers": "^0.5.8",
+    "pixrem": "^3.0.0"
   }
 }

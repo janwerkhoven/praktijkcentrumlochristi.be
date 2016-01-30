@@ -1790,25 +1790,6 @@ iframe {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#landing p,
-#landing h1,
-#landing h3,
-#landing ul {
-  text-align: center;
-  margin-left: 0;
-}
-#landing ul {
-  margin: 20px 0 0;
-  list-style: none;
-}
-#landing li {
-  padding: 0;
-  background: none;
-}
-#landing p img {
-  display: inline-block;
-  margin: 10px 1px 0;
-}
 .menu-btn {
   display: none;
 }
@@ -2121,4 +2102,33 @@ html {
 }
 .lines-button.x.close .lines:after {
   transform: rotate3d(0, 0, 1, -45deg);
+}
+// NEW STYLES
+section {
+  &#landing {
+    p,
+    h1,
+    h3,
+    ul {
+      text-align: center;
+    }
+    ul {
+      margin: 20px 0;
+      list-style: none;
+      li {
+        padding: 0;
+        background: none;
+      }
+    }
+    .images {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      margin: 60px 0 0;
+      img {
+        display: block;
+        margin: 3px;
+      }
+    }
+  }
 }
