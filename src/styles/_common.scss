@@ -5,7 +5,7 @@ body {
   line-height: 22px;
 }
 p {
-  margin: 22px 0;
+  margin: 18px 0;
 }
 a {
   color: #ff2929;
@@ -13,31 +13,54 @@ a {
     text-decoration: none;
     color: lighten(#ff2929,4%);
   }
+  &[href^="tel:"] {
+    font-weight: 700;
+    text-decoration: none;
+    color: #2B2626;
+    &:hover {
+      color: #ff2929;
+      text-decoration: underline;
+    }
+  }
 }
 h1 {
   font-size: 17px;
   line-height: 25px;
   font-weight: 400;
-  color: #9a1818;
   margin: 0 0 50px;
 }
 h2 {
   font-size: 30px;
   font-weight: 700;
-  margin: 28px 0 30px;
-  color: #9a1818;
+  margin: 12px 0 52px;
+  color: #A51313;
 }
 h3 {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 22px;
   font-weight: 700;
-  margin: 50px 0 18px;
+  margin: 47px 0 18px;
+  color: #A51313;
 }
 ul {
-  margin: 22px 0;
+  margin: 18px 0;
+  padding-left: 30px;
+  &.people {
+    padding: 0;
+    margin-bottom: 47px;
+    li {
+      list-style: none;
+      padding: 0;
+      line-height: 25px;
+      i {
+        margin: 0 12px;
+      }
+    }
+  }
   li {
     font-size: 15px;
     line-height: 22px;
+    padding-left: 6px;
   }
 }
 iframe {
@@ -49,44 +72,125 @@ dl {
     float: left;
   }
   dd {
-    width: 100%;
+    margin-left: 32px;
+    @media (max-width: 360px) {
+      margin-left: 10px;
+    }
   }
   dt {
     width: 40px;
     clear: both;
   }
+  &:after {
+    @include clearfix;
+  }
 }
 table {
-  p {
-    margin: 0;
+  margin: 18px 0;
+  tr {
+    td {
+      font-size: 15px;
+      line-height: 22px;
+      padding-right: 20px;
+      vertical-align: top;
+      nobr {
+        padding-right: 20px;
+        width: 140px;
+        display: inline-block;
+      }
+    }
   }
 }
 section,
 header,
 footer {
+  @media (min-width: 601px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .inner {
     max-width: 750px;
+    min-width: 320px;
     box-sizing: border-box;
-    padding: 40px 40px 100px;
+    padding: 45px 45px 90px;
     margin: 0 auto;
   }
 }
 header {
-  height: 115px;
+  height: 135px;
   background: #FFFFFF url(../img/page_t.jpg) no-repeat 50% 0;
   .inner {
+    position: relative;
     padding: 10px 0 0;
+    h1 {
+      position: absolute;
+      left: 96px;
+      top: 25px;
+      font-size: 18px;
+      color: #8D191C;
+      margin: 0;
+      max-width: 180px;
+      line-height: 28px;
+      letter-spacing: 1px;
+    }
+  }
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 520px;
+    height: 72px;
+    .symbol,
+    .praktijk,
+    .centrum,
+    .lochristi {
+      position: absolute;
+      background-image: url(../img/logo.svg);
+      background-repeat: no-repeat;
+      background-size: 223px 72px;
+      .no-svg & {
+        background-image: url(../img/logo.png);
+      }
+    }
+    .symbol {
+      width: 72px;
+      height: 72px;
+      top: 0;
+      left: 0;
+      background-position: 0;
+    }
+    .praktijk {
+      width: 127px;
+      height: 16px;
+      bottom: 0;
+      left: 95px;
+      background-position: -86px 1px;
+    }
+    .centrum {
+      width: 125px;
+      height: 16px;
+      bottom: 0;
+      left: 236px;
+      background-position: -86px -28px;
+    }
+    .lochristi {
+      width: 138px;
+      height: 16px;
+      bottom: 0;
+      left: 377px;
+      background-position: -86px -57px;
+    }
   }
   nav {
     background: #891515;
     background: -moz-linear-gradient(top, #891515 0%, #a81a1a 16%, #8d1616 52%, #6f1111 55%, #831515 100%);
     background: -webkit-linear-gradient(top, #891515 0%,#a81a1a 16%,#8d1616 52%,#6f1111 55%,#831515 100%);
     background: linear-gradient(to bottom, #891515 0%,#a81a1a 16%,#8d1616 52%,#6f1111 55%,#831515 100%);
-    margin-top: 73px;
+    margin-top: 93px;
     height: 32px;
-    border-radius: 4px 4px 0 0;
     ul {
       margin: 0;
+      padding: 0;
       li {
         list-style: none;
       }
@@ -132,7 +236,6 @@ header {
         >ul {
           display: none;
           position: absolute;
-          padding: 0;
           width: 180px;
           border: 1px solid #DDD;
           left: -1px;
@@ -161,8 +264,17 @@ header {
 section {
   .inner {
     border: 2px solid #EEE;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 6px 6px;
     border-top: 0;
+    @media (max-width: 600px) {
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      padding: 6% 6% 12%;
+    }
+    @media (max-width: 320px) {
+      padding: 19px 19px 38px;
+    }
   }
   &#landing {
     p,
@@ -193,9 +305,88 @@ section {
 }
 footer {
   .inner {
+    padding-left: 0;
+    padding-right: 0;
     p {
       margin: 0;
       text-align: center;
     }
   }
+}
+// BURGER
+/* BURGER */
+html {
+  font-size: 9px;
+}
+.lines-button {
+  display: inline-block;
+  padding: 2.2rem .875rem;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: .5rem;
+  background: none;
+  border: 0;
+  outline: 0;
+  background: RGBA(0, 0, 0, 0.1);
+}
+.lines-button:hover {
+  opacity: 1;
+}
+.lines-button:active {
+  transition: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.lines {
+  display: inline-block;
+  width: 3.5rem;
+  height: .5rem;
+  background: #808080;
+  border-radius: .25rem;
+  transition: .3s;
+  position: relative;
+}
+.lines:before,
+.lines:after {
+  display: inline-block;
+  width: 3.5rem;
+  height: .5rem;
+  background: #808080;
+  border-radius: .25rem;
+  transition: .3s;
+  position: absolute;
+  left: 0;
+  content: '';
+  transform-origin: .25rem center;
+}
+.lines:before {
+  top: .875rem;
+}
+.lines:after {
+  top: -0.875rem;
+}
+.lines-button:hover {
+  opacity: 1;
+}
+.lines-button:hover .lines:before {
+  top: 1rem;
+}
+.lines-button:hover .lines:after {
+  top: -1rem;
+}
+.lines-button.x.close .lines {
+  background: transparent;
+}
+.lines-button.x.close .lines:before,
+.lines-button.x.close .lines:after {
+  transform-origin: 50% 50%;
+  top: 0;
+  width: 3.5rem;
+  background-color: white;
+}
+.lines-button.x.close .lines:before {
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.lines-button.x.close .lines:after {
+  transform: rotate3d(0, 0, 1, -45deg);
 }
