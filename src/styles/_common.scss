@@ -1,11 +1,18 @@
 body {
-  font-family: 'Droid Sans', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Helvetica, Sans-Serif;
+  font-family: 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Helvetica, Sans-Serif;
   color: #2B2626;
   font-size: 15px;
-  line-height: 22px;
+  line-height: 170%;
 }
 p {
   margin: 18px 0;
+}
+em {
+  background: yellow;
+  font-style: normal;
+}
+strong {
+  color: #331C1C;
 }
 a {
   color: #ff2929;
@@ -24,42 +31,53 @@ a {
   }
 }
 h1 {
-  font-size: 17px;
-  line-height: 25px;
-  font-weight: 400;
-  margin: 0 0 50px;
+  color: #8D191C;
+  margin: 0;
+  max-width: 180px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 140%;
 }
 h2 {
-  font-size: 30px;
+  font-size: 31px;
   font-weight: 700;
   margin: 12px 0 52px;
   color: #A51313;
+  line-height: 170%;
 }
 h3 {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 17px;
+  line-height: 170%;
   font-weight: 700;
   margin: 47px 0 18px;
-  color: #A51313;
 }
 ul {
   margin: 18px 0;
   padding-left: 30px;
   &.people {
     padding: 0;
-    margin-bottom: 47px;
     li {
       list-style: none;
-      padding: 0;
-      line-height: 25px;
+      padding: 0 0 0 40px;
+      position: relative;
       i {
-        margin: 0 12px;
+        position: absolute;
+        left: 0;
+        line-height: 170%;
+        text-align: center;
+        width: 40px;
       }
+    }
+  }
+  &.spaced {
+    li {
+      margin-bottom: 18px;
     }
   }
   li {
     font-size: 15px;
-    line-height: 22px;
+    line-height: 170%;
     padding-left: 6px;
   }
 }
@@ -90,12 +108,11 @@ table {
   tr {
     td {
       font-size: 15px;
-      line-height: 22px;
-      padding-right: 20px;
+      line-height: 170%;
+      padding-right: 24px;
       vertical-align: top;
       nobr {
-        padding-right: 20px;
-        width: 140px;
+        width: 170px;
         display: inline-block;
       }
     }
@@ -124,14 +141,11 @@ header {
     padding: 10px 0 0;
     h1 {
       position: absolute;
-      left: 96px;
-      top: 25px;
-      font-size: 18px;
-      color: #8D191C;
-      margin: 0;
-      max-width: 180px;
-      line-height: 28px;
-      letter-spacing: 1px;
+      left: 90px;
+      top: 21px;
+      @media (max-width: 600px) {
+        left: 109px;
+      }
     }
   }
   .logo {
@@ -140,6 +154,9 @@ header {
     top: 16px;
     width: 520px;
     height: 72px;
+    @media (max-width: 600px) {
+      left: 16px;
+    }
     .symbol,
     .praktijk,
     .centrum,
@@ -240,7 +257,11 @@ header {
           width: 180px;
           border: 1px solid #DDD;
           left: -1px;
+          z-index: 1;
           >li {
+            &:first-child {
+              border-top: 0;
+            }
             &:last-child {
               a {
                 border: 0;
@@ -271,15 +292,16 @@ section {
       border-left: 0;
       border-right: 0;
       border-radius: 0;
-      padding: 6% 6% 12%;
+      padding: 45px 6% 12%;
     }
     @media (max-width: 320px) {
-      padding: 19px 19px 38px;
+      padding: 45px 19px 38px;
     }
   }
   &#landing {
     p,
     h1,
+    h2,
     h3,
     ul {
       text-align: center;
@@ -313,81 +335,4 @@ footer {
       text-align: center;
     }
   }
-}
-// BURGER
-/* BURGER */
-html {
-  font-size: 9px;
-}
-.lines-button {
-  display: inline-block;
-  padding: 2.2rem .875rem;
-  transition: .3s;
-  cursor: pointer;
-  user-select: none;
-  border-radius: .5rem;
-  background: none;
-  border: 0;
-  outline: 0;
-  background: RGBA(0, 0, 0, 0.1);
-}
-.lines-button:hover {
-  opacity: 1;
-}
-.lines-button:active {
-  transition: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-.lines {
-  display: inline-block;
-  width: 3.5rem;
-  height: .5rem;
-  background: #808080;
-  border-radius: .25rem;
-  transition: .3s;
-  position: relative;
-}
-.lines:before,
-.lines:after {
-  display: inline-block;
-  width: 3.5rem;
-  height: .5rem;
-  background: #808080;
-  border-radius: .25rem;
-  transition: .3s;
-  position: absolute;
-  left: 0;
-  content: '';
-  transform-origin: .25rem center;
-}
-.lines:before {
-  top: .875rem;
-}
-.lines:after {
-  top: -0.875rem;
-}
-.lines-button:hover {
-  opacity: 1;
-}
-.lines-button:hover .lines:before {
-  top: 1rem;
-}
-.lines-button:hover .lines:after {
-  top: -1rem;
-}
-.lines-button.x.close .lines {
-  background: transparent;
-}
-.lines-button.x.close .lines:before,
-.lines-button.x.close .lines:after {
-  transform-origin: 50% 50%;
-  top: 0;
-  width: 3.5rem;
-  background-color: white;
-}
-.lines-button.x.close .lines:before {
-  transform: rotate3d(0, 0, 1, 45deg);
-}
-.lines-button.x.close .lines:after {
-  transform: rotate3d(0, 0, 1, -45deg);
 }
