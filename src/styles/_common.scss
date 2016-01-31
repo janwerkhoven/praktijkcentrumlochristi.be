@@ -134,8 +134,10 @@ footer {
   }
 }
 header {
-  height: 135px;
   background: #FFFFFF url(../img/page_t.jpg) no-repeat 50% 0;
+  @media (min-width: 600px) {
+    height: 135px;
+  }
   .inner {
     position: relative;
     padding: 10px 0 0;
@@ -152,7 +154,6 @@ header {
     position: absolute;
     left: 0;
     top: 16px;
-    width: 520px;
     height: 72px;
     @media (max-width: 600px) {
       left: 16px;
@@ -204,7 +205,12 @@ header {
     background: -webkit-linear-gradient(top, #891515 0%,#a81a1a 16%,#8d1616 52%,#6f1111 55%,#831515 100%);
     background: linear-gradient(to bottom, #891515 0%,#a81a1a 16%,#8d1616 52%,#6f1111 55%,#831515 100%);
     margin-top: 93px;
-    height: 32px;
+    @media (min-width: 601px) {
+      height: 32px;
+    }
+    @media (max-width: 600px) {
+      padding: 16px;
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -214,11 +220,17 @@ header {
       }
     }
     >ul {
-      display: flex;
-      justify-content: center;
+      @media (min-width: 601px) {
+        display: flex;
+        justify-content: center;
+      }
       >li {
         position: relative;
         margin: 0 1px;
+        @media (max-width: 600px) {
+          margin: 0 0 1px;
+          border-top: 1px solid RGBA(255,255,255,0.3);
+        }
         &:last-child {
           >a {
             &:after {
@@ -238,6 +250,9 @@ header {
           display: block;
           text-decoration: none;
           color: #FFF;
+          @media (max-width: 600px) {
+            padding: 0 10px;
+          }
           &:hover {
             color: #FFF;
             background: #ff2929;
@@ -249,15 +264,20 @@ header {
             height: 32px;
             right: -1px;
             background-image: url(../img/menuseparator.png);
+            @media (max-width: 600px) {
+              display: none;
+            }
           }
         }
         >ul {
           display: none;
-          position: absolute;
-          width: 180px;
-          border: 1px solid #DDD;
-          left: -1px;
-          z-index: 1;
+          @media (min-width: 601px) {
+            position: absolute;
+            width: 180px;
+            border: 1px solid #DDD;
+            left: -1px;
+            z-index: 1;
+          }
           >li {
             &:first-child {
               border-top: 0;
