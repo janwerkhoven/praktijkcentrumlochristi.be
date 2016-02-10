@@ -21,19 +21,19 @@ module.exports = function(grunt) {
     watch: {
       handlebars: {
         files: ['src/templates/**/*.hbs', 'src/templates/**/*.json', 'src/templates/layout.html '],
-        tasks: 'handlebarslayouts'
+        tasks: ['handlebarslayouts', 'sitemap']
       },
       sass: {
         files: ['src/styles/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass', 'postcss']
       },
       js: {
         files: ['src/js/**/*.js'],
-        tasks: ['jshint', 'concat', 'uglify']
+        tasks: ['jshint', 'uglify', 'concat', 'clean:temp']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
-        tasks: ['handlebarslayouts', 'sass', 'jshint', 'concat', 'uglify']
+        tasks: ['build']
       },
       options: {
         livereload: true,
@@ -137,36 +137,34 @@ module.exports = function(grunt) {
       }
     },
 
-    // xml_sitemap: {
-    //   custom_options: {
-    //     options: {
-    //       siteRoot: 'http://www.praktijkcentrumlochristi.be/',
-    //       changefreq: 'weekly',
-    //       priority: '0.8',
-    //       dest: 'dist/'
-    //     },
-    //     files: [{
-    //       expand: true,
-    //       cwd: 'dist/',
-    //       src: ['**/*.html', '!**/google2dbd407974c11f6a.html'],
-    //       dest: 'dist/sitemap.xml'
-    //     }]
-    //   }
-    // },
-    //
-    // sitemap_xml: {
-    //   options: {
-    //     siteRoot: 'http://www.praktijkcentrumlochristi.be/',
-    //     changefreq: 'weekly',
-    //     priority: '0.8',
-    //     dest: 'dist/'
-    //   },
-    //   files: [{
-    //     cwd: 'dist/',
-    //     src: '{,**/}*.html',
-    //     dest: 'dist/sitemap.xml'
-    //   }]
-    // }
+    // BUG: Adds /dist to every URL...
+    xml_sitemap: {
+      custom_options: {
+        options: {
+          siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+          changefreq: 'monthly',
+          priority: '0.5',
+          dest: 'dist/'
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: ['**/*.html', '!**/google*.html'],
+        }]
+      }
+    },
+
+    // Temporary until sitemap bug is fixed
+    replace: {
+      sitemap_dist: {
+        src: 'dist/sitemap.xml',
+        dest: 'dist/sitemap.xml',
+        replacements: [{
+          from: '/dist/',
+          to: '/'
+        }]
+      }
+    }
 
   });
 
@@ -182,13 +180,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  // grunt.loadNpmTasks('grunt-sitemap-xml');
-  // grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   // commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
   grunt.registerTask('serve', ['connect', 'watch']);
-  // grunt.registerTask('sitemap', ['xml_sitemap']);
+  grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
 
 };

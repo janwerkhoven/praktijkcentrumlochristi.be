@@ -1,6 +1,7 @@
 body {
-  font-family: 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', Arial, Helvetica, Sans-Serif;
-  color: #2B2626;
+  font-family: $font-stack;
+  color: $paragraph-color;
+  font-weight: 400;
   font-size: 15px;
   line-height: 170%;
 }
@@ -15,23 +16,23 @@ strong {
   color: #331C1C;
 }
 a {
-  color: #ff2929;
+  color: $link-color;
   &:hover {
     text-decoration: none;
-    color: lighten(#ff2929,4%);
+    color: lighten($link-color,4%);
   }
   &[href^="tel:"] {
     font-weight: 700;
     text-decoration: none;
-    color: #2B2626;
+    color: $paragraph-color;
     &:hover {
-      color: #ff2929;
+      color: $link-color;
       text-decoration: underline;
     }
   }
 }
 h1 {
-  color: #8D191C;
+  color: #525252;
   margin: 0;
   max-width: 180px;
   letter-spacing: 1px;
@@ -45,12 +46,17 @@ h2 {
   margin: 12px 0 52px;
   color: #A51313;
   line-height: 170%;
+  @media (max-width: 600px) {
+    margin: 10px 0 47px;
+    line-height: 140%;
+  }
 }
 h3 {
   font-size: 17px;
   line-height: 170%;
   font-weight: 700;
   margin: 47px 0 18px;
+  color: #463939;
 }
 ul {
   margin: 18px 0;
@@ -129,14 +135,17 @@ footer {
     max-width: 750px;
     min-width: 320px;
     box-sizing: border-box;
-    padding: 45px 45px 90px;
+    padding: 45px 55px 90px;
     margin: 0 auto;
   }
 }
 header {
-  background: #FFFFFF url(../img/page_t.jpg) no-repeat 50% 0;
+  background: #FFFFFF url("../img/header-bg.jpg") no-repeat 50% 0;
   @media (min-width: 600px) {
     height: 135px;
+  }
+  @media (max-width: 780px) {
+    background-position: -908px 0;
   }
   .inner {
     position: relative;
@@ -144,9 +153,9 @@ header {
     h1 {
       position: absolute;
       left: 90px;
-      top: 21px;
+      top: 19px;
       @media (max-width: 600px) {
-        left: 109px;
+        left: 106px;
       }
     }
   }
@@ -158,46 +167,6 @@ header {
     @media (max-width: 600px) {
       left: 16px;
     }
-    .symbol,
-    .praktijk,
-    .centrum,
-    .lochristi {
-      position: absolute;
-      background-image: url(../img/logo.svg);
-      background-repeat: no-repeat;
-      background-size: 223px 72px;
-      .no-svg & {
-        background-image: url(../img/logo.png);
-      }
-    }
-    .symbol {
-      width: 72px;
-      height: 72px;
-      top: 0;
-      left: 0;
-      background-position: 0;
-    }
-    .praktijk {
-      width: 127px;
-      height: 16px;
-      bottom: 0;
-      left: 95px;
-      background-position: -86px 1px;
-    }
-    .centrum {
-      width: 125px;
-      height: 16px;
-      bottom: 0;
-      left: 236px;
-      background-position: -86px -28px;
-    }
-    .lochristi {
-      width: 138px;
-      height: 16px;
-      bottom: 0;
-      left: 377px;
-      background-position: -86px -57px;
-    }
   }
   nav {
     background: #891515;
@@ -208,9 +177,6 @@ header {
     @media (min-width: 601px) {
       height: 32px;
     }
-    @media (max-width: 600px) {
-      padding: 16px;
-    }
     ul {
       margin: 0;
       padding: 0;
@@ -220,17 +186,16 @@ header {
       }
     }
     >ul {
-      @media (min-width: 601px) {
-        display: flex;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      @media (max-width: 600px) {
+        max-width: 380px;
+        margin: 0 auto;
       }
       >li {
         position: relative;
         margin: 0 1px;
-        @media (max-width: 600px) {
-          margin: 0 0 1px;
-          border-top: 1px solid RGBA(255,255,255,0.3);
-        }
         &:last-child {
           >a {
             &:after {
@@ -255,7 +220,7 @@ header {
           }
           &:hover {
             color: #FFF;
-            background: #ff2929;
+            background: $link-color;
           }
           &:after {
             content: ' ';
@@ -263,7 +228,7 @@ header {
             width: 1px;
             height: 32px;
             right: -1px;
-            background-image: url(../img/menuseparator.png);
+            background: rgba(255, 255, 255, 0.4);
             @media (max-width: 600px) {
               display: none;
             }
@@ -271,6 +236,9 @@ header {
         }
         >ul {
           display: none;
+          @media (max-width: 600px) {
+            display: none !important;
+          }
           @media (min-width: 601px) {
             position: absolute;
             width: 180px;
@@ -295,7 +263,7 @@ header {
               text-decoration: none;
               background: #FFF;
               border-bottom: 1px solid #DDD;
-              color: #2B2626;
+              color: $paragraph-color;
             }
           }
         }
@@ -305,12 +273,10 @@ header {
 }
 section {
   .inner {
-    border: 2px solid #EEE;
-    border-radius: 0 0 6px 6px;
+    border: 3px solid #EEE;
     border-top: 0;
     @media (max-width: 600px) {
-      border-left: 0;
-      border-right: 0;
+      border: 0;
       border-radius: 0;
       padding: 45px 6% 12%;
     }
@@ -328,10 +294,18 @@ section {
     }
     ul {
       margin: 20px 0;
+      padding: 0;
       list-style: none;
       li {
         padding: 0;
         background: none;
+        a {
+          padding: 0 12px;
+          display: inline-block;
+          @media (max-width: 600px) {
+            padding: 4px 12px;
+          }
+        }
       }
     }
     .images {
@@ -350,9 +324,67 @@ footer {
   .inner {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 20px;
     p {
       margin: 0;
       text-align: center;
+    }
+    nav {
+      background: #F9F9F9;
+      box-shadow: inset 0 30px 30px -30px RGBA(0,0,0,0.1);
+      border-top: 1px solid #E4E4E4;
+      padding-top: 40px;
+      border-bottom: 1px solid #E4E4E4;
+      margin-bottom: 20px;
+      @media (min-width: 601px) {
+        display: none;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 0;
+          text-align: center;
+          line-height: 36px;
+          a {
+            display: block;
+          }
+        }
+      }
+      >ul {
+        >li {
+          padding-bottom: 30px;
+          padding-top: 20px;
+          &:first-child {
+            display: none;
+          }
+          >a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: default;
+            color: $paragraph-color;
+            padding-bottom: 8px;
+          }
+          >ul {
+            >li {
+              border-bottom: 1px solid #EAEAEA;
+              &:first-child {
+                border-top: 1px solid #EAEAEA;
+              }
+              >a {
+                text-decoration: none;
+                color: #F50000;
+                &:hover {
+                  background: #FFF;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
