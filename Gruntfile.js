@@ -162,6 +162,12 @@ module.exports = function(grunt) {
         replacements: [{
           from: '/dist/',
           to: '/'
+        }, {
+          from: '<feed>',
+          to: ''
+        }, {
+          from: '</feed>',
+          to: ''
         }]
       }
     }
