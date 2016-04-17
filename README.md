@@ -1,4 +1,4 @@
-# praktijkcentrumlochristi.be
+# colettewerden.com
 
 #### What
 The [website](http://colettewerden.com/) of an Australian personal brand image expert: Colette Werden.
