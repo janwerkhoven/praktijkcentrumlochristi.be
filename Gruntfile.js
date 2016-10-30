@@ -2,6 +2,8 @@ module.exports = function(grunt) {
 
   'use strict';
 
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -73,8 +75,9 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         map: false,
+        remove: false,
         processors: [
-          require('pixrem')(),
+          // require('pixrem')(),
           require('autoprefixer')({
             browsers: ['> 1% in BE']
           }),
@@ -175,19 +178,19 @@ module.exports = function(grunt) {
   });
 
   // load tasks
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks("grunt-handlebars-layouts");
-  grunt.loadNpmTasks('grunt-html-prettyprinter');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-html-prettyprinter');
+  grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-xml-sitemap');
+  grunt.loadNpmTasks("grunt-handlebars-layouts");
 
   // commands
   grunt.registerTask('default', ['build', 'serve']);
