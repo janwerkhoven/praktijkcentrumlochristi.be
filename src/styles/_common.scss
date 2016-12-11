@@ -8,10 +8,6 @@ body {
 p {
   margin: 18px 0;
 }
-em {
-  background: yellow;
-  font-style: normal;
-}
 strong {
   color: #331C1C;
 }
@@ -327,6 +323,30 @@ section {
         margin: 3px;
       }
     }
+  }
+}
+#stopzetting {
+  background: #ffff78;
+  box-shadow: 0 2px 8px RGBA(0,0,0,0.2);
+  color: #52521c;
+  div {
+    padding: 20px;
+  }
+  margin-bottom: 50px;
+}
+
+// HACK: Use page IDs instead
+.inner.stopzetting {
+  > div {
+    p {
+      margin: 0;
+    }
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #CCC;
+    margin: 42px 0;
   }
 }
 footer {
