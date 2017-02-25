@@ -17,15 +17,6 @@ a {
     text-decoration: none;
     color: lighten($link-color,4%);
   }
-  &[href^="tel:"] {
-    font-weight: 700;
-    text-decoration: none;
-    color: $paragraph-color;
-    &:hover {
-      color: $link-color;
-      text-decoration: underline;
-    }
-  }
 }
 h1 {
   color: $pcl-red-3;
