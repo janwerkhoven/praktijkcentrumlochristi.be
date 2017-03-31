@@ -304,7 +304,7 @@ section {
       text-align: center;
     }
     ul {
-      margin: 20px 0;
+      margin: 12px 0;
       padding: 0;
       list-style: none;
       li {
@@ -318,6 +318,15 @@ section {
           }
         }
       }
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    ul+img {
+      display: block;
+      margin-top: 40px;
+      max-width: 100%;
+      height: auto;
     }
     .images {
       display: flex;
