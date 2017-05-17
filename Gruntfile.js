@@ -77,7 +77,6 @@ module.exports = function(grunt) {
         map: false,
         remove: false,
         processors: [
-          // require('pixrem')(),
           require('autoprefixer')({
             browsers: ['> 1%', 'Explorer > 9', 'Firefox >= 17', 'Chrome >= 10', 'Safari >= 6', 'iOS >= 6'],
             cascade: false
