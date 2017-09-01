@@ -122,6 +122,9 @@ ul {
         display: block;
         max-width: 100%;
         height: auto;
+        &.black-border {
+          border: 3px solid black;
+        }
       }
     }
   }
