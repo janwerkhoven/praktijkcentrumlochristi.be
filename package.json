@@ -21,10 +21,11 @@
     "grunt-handlebars-layouts": "^0.2.0",
     "grunt-html-prettyprinter": "^1.5.0",
     "grunt-postcss": "^0.7.1",
-    "grunt-sass": "^1.2.1",
+    "grunt-sass": "^3.0.1",
     "grunt-text-replace": "^0.4.0",
     "grunt-xml-sitemap": "^0.2.0",
     "handlebars-helpers": "^0.5.8",
+    "node-sass": "^4.9.2",
     "pixrem": "^3.0.0",
     "time-grunt": "^1.4.0"
   }
