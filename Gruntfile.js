@@ -147,7 +147,7 @@ module.exports = function(grunt) {
     xml_sitemap: {
       custom_options: {
         options: {
-          siteRoot: 'http://www.praktijkcentrumlochristi.be/',
+          siteRoot: 'https://www.praktijkcentrumlochristi.be/',
           changefreq: 'monthly',
           priority: '0.5',
           dest: 'dist/'
