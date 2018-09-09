@@ -197,7 +197,8 @@ module.exports = function(grunt) {
 
   // commands
   grunt.registerTask('default', ['build', 'serve']);
-  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
+  // grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
+  grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sitemap', 'clean:temp']);
   grunt.registerTask('serve', ['connect', 'watch']);
   grunt.registerTask('sitemap', ['xml_sitemap', 'replace:sitemap_dist']);
 
