@@ -1,0 +1,80 @@
+{% extends "layout.html.njk" %}
+
+{% block $1 %}
+  <title>Praktijkcentrum Lochristi</title>
+  <meta name="description" content="Hier kan u terecht bij 3 huisartsen, 4 kinderpsychologen, 1 psychologe en 1 voedingsdeskundige. Gelegen net buiten de dorpskern van Lochristi.">
+{% endblock %}
+
+{% block main %}
+  <section id="landing">
+    <div class="inner">
+      <h2>Welkom</h2>
+      <p>Welkom op onze praktijkwebsite.
+        <nobr>Hier kan u terecht bij:</nobr>
+      </p>
+      <div class="boxes">
+        <div class="huisarts">
+          <div class="text">
+            <h3>Huisartsen</h3>
+            <ul>
+              <li>
+                <a href="/huisarts/raadpleging" title="Raadpleging huisarts dokter Marc De Jaeger">Huisarts Marc De Jaeger</a>
+              </li>
+              <li>
+                <a href="/huisarts/raadpleging" title="Raadpleging huisarts dokter Sarah Van Thuyne">Huisarts Sara Van Thuyne</a>
+              </li>
+              <li>
+                <a href="/huisarts/opleidingspraktijk" title="HAIO Jelle Van Nieuwenhuyze">HAIO Jelle Van Nieuwenhuyze</a>
+              </li>
+              <li>
+                <a href="/huisarts/opleidingspraktijk" title="HAIO Cedric Leys">HAIO Cedric Leys</a>
+              </li>
+            </ul>
+            <a href="http://sanmax.afsprakenbeheer.be/e/aHN0UVJrME14VXVnbXRmNHRzbE9EVDRpT2pFRWFUNU1hbXUyZTVoUFc3Q0x2dGFzTElubWFBPT0%3D" class="button" target="_blank">Maak een afspraak</a>
+          </div>
+          <div class="photo">
+            <img src="/assets/img/huisartsen-praktijkcentrum-lochristi.jpg" alt="Huisarts Dr. Marc De Jaeger" width="654" height="850">
+          </div>
+        </div>
+        <div class="psycholoog">
+          <h3>Psychologen</h3>
+          <ul>
+            <li>
+              <a href="/psycholoog/introductie" title="Psycholoog Mieke Soons">Psychologe
+                <nobr>Mieke Soons</nobr>
+              </a>
+            </li>
+            <li>
+              <a href="/psycholoog/introductie" title="Psycholoog Isabelle Ottermans">Psychologe
+                <nobr>Isabelle Ottermans</nobr>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="voedingsdeskundige">
+          <h3>Voedingsdeskundige</h3>
+          <ul>
+            <li>
+              <a href="/dietist/introductie" title="Diëtiste Céline Stadeus">Voedingsdeskundige
+                <nobr>Céline Stadeus</nobr>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="secretariaat">
+          <h3>Secretariaat</h3>
+          <ul>
+            <li>
+              <a href="/secretariaat" title="Praktijkassistente Shanty Van Zele">Praktijkassistente Shanty Van Zele</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="images">
+        <img src="/assets/img/praktijk-wachtzaal-2x.jpg" alt="wachtzaal in Praktijkcentrum Lochristi" height="160" width="240">
+        <img src="/assets/img/praktijk-stethoscoop-2x.jpg" alt="stethoscoop van huisarts Marc De Jaeger" height="160" width="140">
+        <img src="/assets/img/praktijk-consultatieruimte-2x.jpg" alt="consultatieruimte van huisarts Marc De Jaeger" height="160" width="241">
+      </div>
+    </div>
+  </section>
+{% endblock %}

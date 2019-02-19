@@ -1,0 +1,10 @@
+// Normalises the CSS so all browsers render the same
+@import "normalize";
+
+// SASS
+@import "variables";
+@import "mixins";
+
+// Styles
+@import "common";
+@import "footer";

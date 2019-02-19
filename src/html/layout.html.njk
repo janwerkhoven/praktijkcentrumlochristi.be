@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="{{language}}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="Copyright 2011 all rights reserved by Jan Werkhoven"/>
+    <meta name="developer" content="Jan Werkhoven jan@nabu.io www.nabu.io"/>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="{{themeColour}}">
+    <meta name="google-site-verification" content="{{googleSiteVerification}}"/>
+    {% block meta %}
+      <title>Praktijkcentrum Lochristi</title>
+      <meta name="description" content="Hier kan u terecht bij 3 huisartsen, 4 kinderpsychologen, 2 psychologe en 1 voedingsdeskundige. Gelegen net buiten de dorpskern van Lochristi."/>
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css">
+    <script src="/assets/js/main.min.js"></script>
+    {% include "partials/favicons.njk" %}
+  </head>
+
+  <body id="{% block id %}{% endblock %}">
+    {% include "partials/header.njk" %}
+    <main>
+      {% block main %}{% endblock %}
+    </main>
+    {% include "partials/footer.njk" %}
+    {% include "partials/outdated-browsers.njk" %}
+    {% include "partials/google-analytics.njk" %}
+  </body>
+</html>
