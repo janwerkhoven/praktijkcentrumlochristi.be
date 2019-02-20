@@ -6,8 +6,10 @@ const { src, dest, series, parallel, watch } = require("gulp");
 // https://gulpjs.com/docs/en/getting-started/using-plugins
 const autoprefixer = require("gulp-autoprefixer");
 const babel = require("gulp-babel");
+const concat = require("gulp-concat");
 const connect = require("gulp-connect");
 const del = require("del");
+const eslint = require("gulp-eslint");
 const normalize = require("node-normalize-scss");
 const nunjucksRender = require("gulp-nunjucks-render");
 const prettify = require("gulp-jsbeautifier");
@@ -53,7 +55,7 @@ function html() {
 
 // Compiles all the CSS
 function css() {
-  return src("src/css/main.scss")
+  return src("src/css/app.scss")
     .pipe(
       sass({
         outputStyle: "compressed",
@@ -73,20 +75,38 @@ function css() {
         ]
       })
     )
-    .pipe(rename("main.min.css"))
+    .pipe(rename("app.min.css"))
     .pipe(dest("dist/assets/css"));
 }
 
-// Compiles all the JS
-function js() {
-  return src("src/js/main.js")
+// Check your JS syntax against ES Lint
+function lintJs() {
+  return src("src/js/app.js")
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+}
+
+// Convert your JS with Babel and minify it
+function buildJs() {
+  return src("src/js/app.js")
     .pipe(
       babel({
         presets: ["@babel/env"]
       })
     )
     .pipe(uglify())
-    .pipe(rename("main.min.js"))
+    .pipe(rename("app.min.js"))
+    .pipe(dest("dist/assets/js"));
+}
+
+// Concatenate all vendor JS
+function concatVendorJs() {
+  return src([
+    "bower_components/jquery/dist/jquery.min.js",
+    "src/js/vendor/google-analytics.js"
+  ])
+    .pipe(concat("vendor.min.js"))
     .pipe(dest("dist/assets/js"));
 }
 
@@ -119,6 +139,7 @@ function watchers() {
 
 // Create Gulp commands
 // https://gulpjs.com/docs/en/getting-started/creating-tasks
+const js = parallel(concatVendorJs, series(lintJs, buildJs));
 const build = series(clean, parallel(assets, html, css, js), report);
 const serve = series(build, parallel(localhost, watchers));
 

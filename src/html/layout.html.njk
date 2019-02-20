@@ -15,8 +15,9 @@
     {% endblock %}
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-    <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css">
-    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css">
     {% include "partials/favicons.njk" %}
   </head>
 
@@ -27,6 +28,5 @@
     </main>
     {% include "partials/footer.njk" %}
     {% include "partials/outdated-browsers.njk" %}
-    {% include "partials/google-analytics.njk" %}
   </body>
 </html>
