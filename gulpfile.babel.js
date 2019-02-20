@@ -110,14 +110,18 @@ function localhost() {
 
 // Watches the `src/` folder for file changes and fires tasks accordingly
 // https://gulpjs.com/docs/en/getting-started/watching-files
-function watchDist() {
+function watchers() {
   watch("src/public/**/*", assets);
   watch("src/html/**/*.njk", html);
   watch("src/css/**/*.scss", css);
   watch("src/js/**/*.js", js);
 }
 
-// Finally, create Gulp commands
+// Create Gulp commands
 // https://gulpjs.com/docs/en/getting-started/creating-tasks
-exports.build = series(clean, parallel(assets, html, css, js), report);
-exports.serve = parallel(localhost, watchDist);
+const build = series(clean, parallel(assets, html, css, js), report);
+const serve = series(build, parallel(localhost, watchers));
+
+// Finally make those tasks available in Gulp CLI
+exports.build = build;
+exports.serve = serve;
