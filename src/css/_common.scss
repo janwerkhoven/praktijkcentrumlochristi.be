@@ -243,9 +243,9 @@ header {
       #6f1111 55%,
       #831515 100%
     );
-    margin-top: 93px;
+    margin-top: 89px;
     @media (min-width: 601px) {
-      height: 32px;
+      height: 36px;
     }
     ul {
       margin: 0;
@@ -265,7 +265,7 @@ header {
       }
       > li {
         position: relative;
-        margin: 0 1px;
+        margin: 0 1px 0 0;
         &:last-child {
           > a {
             &:after {
@@ -296,7 +296,7 @@ header {
             content: " ";
             position: absolute;
             width: 1px;
-            height: 32px;
+            height: 36px;
             right: -1px;
             background: rgba(255, 255, 255, 0.4);
             @media (max-width: 600px) {
