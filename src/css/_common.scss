@@ -399,7 +399,8 @@ section {
           }
           > div {
             flex-shrink: 0;
-            width: 50%;
+            // width: 50%; // TODO: Revert once new image has been added
+            width: 100%;
             @media (max-width: 600px) {
               width: 100%;
             }
@@ -418,9 +419,7 @@ section {
           }
           .button {
             margin-top: 28px;
-            @media (max-width: 600px) {
-              margin-bottom: 42px;
-            }
+            margin-bottom: 42px;
           }
         }
         &.secretariaat {
