@@ -417,9 +417,14 @@ section {
             max-width: 100%;
             height: auto;
           }
-          .button {
+          button {
             margin-top: 28px;
             margin-bottom: 42px;
+            background-color: #a51213;
+            color: white;
+            padding: 8px 26px;
+            font-size: 20px;
+            cursor: pointer;
           }
         }
         &.secretariaat {
@@ -465,6 +470,100 @@ section {
     }
   }
 }
+
+#modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: RGBA(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  .close {
+    display: none;
+  }
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #979797;
+    padding: 40px 40px 75px 40px;
+    ul li {
+      text-align: left;
+      padding: 0px 0px 0px 75px;
+      width: 50%;
+    }
+    .question {
+      display: flex;
+      align-items: baseline;
+      text-align: left;
+      button {
+        background-color: #a51213;
+        color: white;
+        outline-style: auto;
+        padding: 8px 26px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      button.highlighted {
+        background-color: blue;
+      }
+      h3 {
+        margin: 0;
+        width: 530px;
+        text-align: left;
+        padding: 0px 0px 0px 55px;
+      }
+    }
+  }
+}
+
+#modal.close {
+  display: none;
+}
+
+#modal.open {
+  display: block;
+}
+
+#modal > #call .content.shown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header header header header" "days time time time";
+  grid-gap: 10px;
+  border: 2px solid red;
+  border-radius: 5px;
+  > h3 {
+    grid-area: header;
+    text-align: center;
+  }
+}
+
+#modal .content.hidden {
+  display: none;
+}
+
+#modal .content.shown {
+  display: block;
+}
+
+#book {
+  text-align: center;
+  button {
+    background-color: #a51213;
+    color: white;
+    outline-style: auto;
+    padding: 8px 26px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
 #stopzetting {
   background: #ffff78;
   box-shadow: 0 2px 8px RGBA(0, 0, 0, 0.2);

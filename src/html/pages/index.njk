@@ -33,50 +33,123 @@
                 <a href="/huisarts/opleidingspraktijk" title="HAIO Ellen Van Hoecke">HAIO Ellen Van Hoecke</a>
               </li>
             </ul>
-            <a href="/huisarts/raadpleging" class="button">Maak een afspraak</a>
-            {# <a href="http://sanmax.afsprakenbeheer.be/e/aHN0UVJrME14VXVnbXRmNHRzbE9EVDRpT2pFRWFUNU1hbXUyZTVoUFc3Q0x2dGFzTElubWFBPT0%3D" class="button" target="_blank" rel="noopener">Maak een afspraak</a> #}
+            <button class="open">Maak een afspraak</button>
+            <div id="modal" class="close">
+              <div id="questions" class="content shown">
+                <button class="close">x</button>
+                <p>Please answer the following questions:</p>
+                <div class="question">
+                  <h3>Are you having any of the following symptoms?</h3>
+                  <button class="yes">Yes</button>
+                  <button class="no">No</button>
+                </div>
+                <ul>
+                  <li>- Hoesten</li>
+                  <li>- Kortademigheid</li>
+                  <li>- Thoracale pijn</li>
+                  <li>- Koorts</li>
+                  <li>- Verlies van geur en smaak</li>
+                  <li>- Keelpijn</li>
+                  <li>- Verstopte neus/Loopneus</li>
+                  <li>- Spierpijnen</li>
+                  <li>- Vermoeidheid</li>
+                  <li>- diaree</li>
+                  <li>- Verergering van gukende luchtwegsymptomen (chronische bronchitis, astma...) zonder duidelijke oorzaak</li>
+                </ul>
+                <div class="question">
+                  <h3>Have you recently been in touch with anyone that tested positive to Covid-19?</h3>
+                  <button class="yes">Yes</button>
+                  <button class="no">No</button>
+                </div>
+                <div class="question">
+                  <h3>Have you recently been in a high risk area for Covid-19?</h3>
+                  <button class="yes">Yes</button>
+                  <button class="no">No</button>
+                </div>
+              </div>
+
+              <div id="call" class="content hidden">
+                <h3>Please call 09 355 92 15 between reception times to make an appointment:</h3>
+                <span>Monday</span>
+                <span>7u30 - 12u00</span>
+                <span></span>
+                <span>16u30 - 19u00</span>
+                <span>Tuesday</span>
+                <span>7u30 - 12u00</span>
+                <span></span>
+                <span>16u30 - 19u00</span>
+                <span>Wednesday</span>
+                <span></span>
+                <span>13u00 - 16u30</span>
+                <span></span>
+                <span>Thursday</span>
+                <span>7u30 - 12u00</span>
+                <span></span>
+                <span>16u30 - 19u00</span>
+                <span>Friday</span>
+                <span>7u30 - 12u00</span>
+                <span></span>
+                <span>16u30 - 19u00</span>
+                <span>Saturday</span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span>Sunday</span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div id="book" class="content hidden">
+                <h3>Thank you. Please book your appointment with our online booking app Sanmax</h3>
+                <button type="appointment" name="appointment">Make an appointment</button>
+              </div>
+
+            </div>
           </div>
-          {# <div class="photo">
+          {# <a href="http://sanmax.afsprakenbeheer.be/e/aHN0UVJrME14VXVnbXRmNHRzbE9EVDRpT2pFRWFUNU1hbXUyZTVoUFc3Q0x2dGFzTElubWFBPT0%3D" class="button" target="_blank" rel="noopener">Maak een afspraak</a> #}
+        </div>
+        {# <div class="photo">
             <img src="/assets/img/huisartsen-praktijkcentrum-lochristi.jpg" alt="Huisarts Dr. Marc De Jaeger" width="654" height="850">
           </div> #}
-        </div>
-        <div class="psycholoog">
-          <h3>Psychologen</h3>
-          <ul>
-            <li>
-              <a href="/psycholoog/introductie" title="Psycholoog Isabelle Ottermans">Psychologe
-                <nobr>Isabelle Ottermans</nobr>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="voedingsdeskundige">
-          <h3>Voedingsdeskundige</h3>
-          <ul>
-            <li>
-              <a href="/dietist/introductie" title="Diëtiste Céline Stadeus">Voedingsdeskundige
-                <nobr>Céline Stadeus</nobr>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="secretariaat">
-          <h3>Secretariaat</h3>
-          <ul>
-            <li>
-              <a href="/secretariaat" title="Praktijkassistente Shanty Van Zele">Praktijkassistente Shanty Van Zele</a>
-            </li>
-            <li>
-              <a href="/secretariaat" title="Praktijkassistente Shaline De Wever">Praktijkassistente Shaline De Wever</a>
-            </li>
-          </ul>
-        </div>
       </div>
-      <div class="images">
-        <img src="/assets/img/praktijk-wachtzaal-2x.jpg" alt="wachtzaal in Praktijkcentrum Lochristi" height="160" width="240">
-        <img src="/assets/img/praktijk-stethoscoop-2x.jpg" alt="stethoscoop van huisarts Marc De Jaeger" height="160" width="140">
-        <img src="/assets/img/praktijk-consultatieruimte-2x.jpg" alt="consultatieruimte van huisarts Marc De Jaeger" height="160" width="241">
+      <div class="psycholoog">
+        <h3>Psychologen</h3>
+        <ul>
+          <li>
+            <a href="/psycholoog/introductie" title="Psycholoog Isabelle Ottermans">Psychologe
+              <nobr>Isabelle Ottermans</nobr>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="voedingsdeskundige">
+        <h3>Voedingsdeskundige</h3>
+        <ul>
+          <li>
+            <a href="/dietist/introductie" title="Diëtiste Céline Stadeus">Voedingsdeskundige
+              <nobr>Céline Stadeus</nobr>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="secretariaat">
+        <h3>Secretariaat</h3>
+        <ul>
+          <li>
+            <a href="/secretariaat" title="Praktijkassistente Shanty Van Zele">Praktijkassistente Shanty Van Zele</a>
+          </li>
+          <li>
+            <a href="/secretariaat" title="Praktijkassistente Shaline De Wever">Praktijkassistente Shaline De Wever</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+    <div class="images">
+      <img src="/assets/img/praktijk-wachtzaal-2x.jpg" alt="wachtzaal in Praktijkcentrum Lochristi" height="160" width="240">
+      <img src="/assets/img/praktijk-stethoscoop-2x.jpg" alt="stethoscoop van huisarts Marc De Jaeger" height="160" width="140">
+      <img src="/assets/img/praktijk-consultatieruimte-2x.jpg" alt="consultatieruimte van huisarts Marc De Jaeger" height="160" width="241">
+    </div>
+  </div>
+</section>
 {% endblock %}
