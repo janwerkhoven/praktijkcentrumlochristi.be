@@ -10,8 +10,8 @@
     "ga": true
   },
   "rules": {
-    "no-debugger": 1,
-    "no-console": 1,
-    "no-unused-vars": 1
+    "no-debugger": "warn",
+    "no-console": "off",
+    "no-unused-vars": "warn"
   }
 }
