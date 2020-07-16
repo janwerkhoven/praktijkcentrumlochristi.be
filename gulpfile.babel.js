@@ -83,27 +83,29 @@ function css() {
 function lintJs() {
   return src("src/js/app.js")
     .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(eslint.format());
+  // .pipe(eslint.failAfterError());
 }
 
 // Convert your JS with Babel and minify it
 function buildJs() {
-  return src("src/js/app.js")
-    .pipe(
-      babel({
-        presets: ["@babel/env"]
-      })
-    )
-    .pipe(uglify())
-    .pipe(rename("app.min.js"))
-    .pipe(dest("dist/assets/js"));
+  return (
+    src("src/js/app.js")
+      .pipe(
+        babel({
+          presets: ["@babel/env"]
+        })
+      )
+      // .pipe(uglify())
+      .pipe(rename("app.min.js"))
+      .pipe(dest("dist/assets/js"))
+  );
 }
 
 // Concatenate all vendor JS
 function concatVendorJs() {
   return src([
-    "bower_components/jquery/dist/jquery.min.js",
+    // "bower_components/jquery/dist/jquery.min.js",
     "src/js/vendor/google-analytics.js"
   ])
     .pipe(concat("vendor.min.js"))
