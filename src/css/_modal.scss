@@ -1,0 +1,144 @@
+@keyframes scale-up {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body.show-modal {
+  #page {
+    position: fixed;
+    width: 100%;
+  }
+  #modal {
+    display: flex;
+  }
+}
+
+#modal {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(black, 0.5);
+    cursor: pointer;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 600ms;
+    animation-timing-function: $easeOutExpo;
+    animation-fill-mode: forwards;
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    animation-name: scale-up;
+    animation-duration: 600ms;
+    animation-timing-function: $easeOutExpo;
+    animation-fill-mode: forwards;
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 0;
+      background: white;
+      box-shadow: 0 4px 4px rgba(black, 0.2);
+      max-width: 94vw;
+      width: 460px;
+      box-sizing: border-box;
+      padding: 50px;
+      z-index: 1;
+      @include mobile {
+        padding: 10vw;
+      }
+      &.hide {
+        display: none;
+      }
+      h3 {
+        margin: 0;
+      }
+      .buttons {
+        display: flex;
+        width: 160px;
+        button {
+          display: block;
+          flex: 1;
+        }
+        button + button {
+          margin-left: 10px;
+        }
+      }
+      ul + .buttons,
+      p + .buttons {
+        margin-top: 10px;
+      }
+      h3 + .buttons {
+        margin-top: 30px;
+      }
+      .buttons + ul {
+        margin: 40px 0 0;
+      }
+    }
+  }
+
+  #question-1 {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  #call-us {
+    width: 520px;
+    .button {
+      width: 100%;
+    }
+    ul {
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      li {
+        display: flex;
+        padding: 0;
+        &:nth-child(odd) {
+          background: #eee;
+        }
+        p {
+          flex: 1;
+          white-space: nowrap;
+          padding: 10px;
+          margin: 0;
+          &:first-child {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

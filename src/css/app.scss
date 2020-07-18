@@ -3,8 +3,12 @@
 
 // SASS
 @import "variables";
+@import "easings";
 @import "mixins";
+@import "responsive";
 
 // Styles
 @import "common";
+@import "landing";
+@import "modal";
 @import "footer";

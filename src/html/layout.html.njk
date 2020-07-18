@@ -21,12 +21,15 @@
     {% include "partials/favicons.njk" %}
   </head>
 
-  <body id="{% block id %}{% endblock %}">
-    {% include "partials/header.njk" %}
-    <main>
-      {% block main %}{% endblock %}
-    </main>
-    {% include "partials/footer.njk" %}
+  <body>
+    <div id="page">
+      {% include "partials/header.njk" %}
+      <main>
+        {% block main %}{% endblock %}
+      </main>
+      {% include "partials/footer.njk" %}
+    </div>
+    {% include "partials/book-modal.njk" %}
     {% include "partials/outdated-browsers.njk" %}
   </body>
 </html>
