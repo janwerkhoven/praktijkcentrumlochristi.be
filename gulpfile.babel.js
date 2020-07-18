@@ -37,8 +37,8 @@ function html() {
         data: {
           language: "nl",
           themeColour: "#A81F23",
-          googleSiteVerification: "2jtyuIU_dEZdz49Xwr2_MkCftkSinKjI6mShUeo_pdw"
-        }
+          googleSiteVerification: "2jtyuIU_dEZdz49Xwr2_MkCftkSinKjI6mShUeo_pdw",
+        },
       })
     )
     .pipe(
@@ -46,8 +46,8 @@ function html() {
         html: {
           indent_inner_html: true,
           indent_size: 2,
-          max_preserve_newlines: 0
-        }
+          max_preserve_newlines: 0,
+        },
       })
     )
     .pipe(dest("dist"));
@@ -59,7 +59,7 @@ function css() {
     .pipe(
       sass({
         outputStyle: "compressed",
-        includePaths: normalize.includePaths
+        includePaths: normalize.includePaths,
       }).on("error", sass.logError)
     )
     .pipe(
@@ -71,8 +71,8 @@ function css() {
           "Firefox >= 17",
           "Chrome >= 10",
           "Safari >= 6",
-          "iOS >= 6"
-        ]
+          "iOS >= 6",
+        ],
       })
     )
     .pipe(rename("app.min.css"))
@@ -92,7 +92,7 @@ function buildJs() {
   return src("src/js/app.js")
     .pipe(
       babel({
-        presets: ["@babel/env"]
+        presets: ["@babel/env"],
       })
     )
     .pipe(uglify())
@@ -102,10 +102,7 @@ function buildJs() {
 
 // Concatenate all vendor JS
 function concatVendorJs() {
-  return src([
-    "bower_components/jquery/dist/jquery.min.js",
-    "src/js/vendor/google-analytics.js"
-  ])
+  return src(["src/js/vendor/google-analytics.js"])
     .pipe(concat("vendor.min.js"))
     .pipe(dest("dist/assets/js"));
 }
@@ -115,7 +112,7 @@ function report() {
   return src(["dist/**/*"]).pipe(
     size({
       showFiles: true,
-      showTotal: false
+      showTotal: false,
     })
   );
 }
@@ -124,7 +121,7 @@ function report() {
 function localhost() {
   connect.server({
     root: "dist",
-    port: 9000
+    port: 9000,
   });
 }
 

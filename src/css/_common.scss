@@ -316,16 +316,11 @@ header {
         }
         > ul {
           display: none;
-          @media (max-width: 600px) {
-            display: none !important;
-          }
-          @media (min-width: 601px) {
-            position: absolute;
-            width: 180px;
-            border: 1px solid #ddd;
-            left: -1px;
-            z-index: 1;
-          }
+          position: absolute;
+          width: 180px;
+          border: 1px solid #ddd;
+          left: -1px;
+          z-index: 1;
           > li {
             &:first-child {
               border-top: 0;
