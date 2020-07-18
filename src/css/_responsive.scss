@@ -1,0 +1,54 @@
+// Mixins for breaking the CSS into 4 breakpoints:
+//
+// @include widescreen { }
+// @include desktop { }
+// @include tablet { }
+// @include mobile { }
+//
+// Note how these breakpoints are exclusive and do not leak CSS rules into one
+// another. Strict scoping makes you write a bit more CSS rules, but gains you
+// predictable stability. It avoids technical debt down the track. A fix for
+// desktop does not accidentally break mobile without noticing for example.
+//
+@mixin widescreen {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1200px) and (min-width: 901px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 900px) and (min-width: 601px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+// Returns vw for given px at given screenwidth
+//
+// For example, the mobile designs are made at 360px width. If in those designs
+// a margin of 16px is used, then to convert that in vw the calculation would be:
+// 16px / 360px * 100 = 4.444vw
+//
+// Why use vw? To lock down the sizes and proportions the designer intended.
+// If all is made in vw, then the entire page scales evenly with the screen
+// much like how a PDF of the designs does. To avoid text from bloating we need
+// enough breakpoints. Above the max screen width, ideally stop using vw.
+//
+// Documentation on SASS functions:
+// https://sass-lang.com/documentation/at-rules/function
+//
+@function vw($desired_px, $screen_width: 1200) {
+  @return #{($desired_px / $screen_width * 100) + 'vw'};
+}
+
+@function px($desired_vw, $screen_width) {
+  @return #{(($desired_vw / 100) * $screen_width) + 'px'};
+}
