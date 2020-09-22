@@ -35,6 +35,7 @@
   "scripts": {
     "serve": "NODE_ENV=development ./node_modules/.bin/gulp serve",
     "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
+    "setup": "remote/setup.sh",
     "deploy": "remote/deploy.sh"
   }
 }
