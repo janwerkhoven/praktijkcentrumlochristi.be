@@ -33,7 +33,7 @@
     "yarn": ">= 1.0.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/gulp serve",
+    "serve": "NODE_ENV=development ./node_modules/.bin/gulp serve",
     "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
     "deploy": "./deploy.sh",
     "bump-patch": "npm version patch; git push origin --tags; git push",
