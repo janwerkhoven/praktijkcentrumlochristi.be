@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: mkdir ~/.ssh
-      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/bot@server.interflux.com'
-      - run: ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
+      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/bot@frankfurt.floatplane.dev'
+      - run: ssh-keyscan -H frankfurt.floatplane.dev > ~/.ssh/known_hosts
       - run: chmod 0755 ~/.ssh/
-      - run: chmod 600 ~/.ssh/bot@server.interflux.com
+      - run: chmod 600 ~/.ssh/bot@frankfurt.floatplane.dev
       - run: chmod 644 ~/.ssh/known_hosts
       - run: remote/deploy.sh
