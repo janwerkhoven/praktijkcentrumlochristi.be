@@ -3,17 +3,18 @@
 set -e
 set -o pipefail
 
-branch=$(git rev-parse --abbrev-ref HEAD)
-revision=$(git rev-parse --short HEAD)
+user=bot
+server=frankfurt.floatplane.dev
+domain=praktijkcentrumlochristi.be
 
 echo "----------"
 echo "Deploying:"
-echo $branch
-echo $revision
+echo $domain
+echo $user@$server
 echo "----------"
 
-(set -x; scp remote/install.sh jw@frankfurt.floatplane.dev:/var/www/praktijkcentrumlochristi.be)
-
-echo "----------"
-
-(set -x; ssh jw@frankfurt.floatplane.dev "/var/www/praktijkcentrumlochristi.be/install.sh $branch $revision")
+(
+  set -x
+  scp -i ~/.ssh/$user@$server remote/deploy-remote.sh $user@$server:~/
+  ssh -i ~/.ssh/$user@$server $user@$server "~/deploy-remote.sh $domain; rm -f ~/deploy-remote.sh"
+)
