@@ -12,8 +12,8 @@ echo $branch
 echo $revision
 echo "----------"
 
-(set -x; scp install.sh deploy@frankfurt.server.floatplane.dev:/var/www/praktijkcentrumlochristi.be)
+(set -x; scp remote/install.sh jw@frankfurt.floatplane.dev:/var/www/praktijkcentrumlochristi.be)
 
 echo "----------"
 
-(set -x; ssh deploy@frankfurt.server.floatplane.dev "/var/www/praktijkcentrumlochristi.be/install.sh $branch $revision")
+(set -x; ssh jw@frankfurt.floatplane.dev "/var/www/praktijkcentrumlochristi.be/install.sh $branch $revision")
