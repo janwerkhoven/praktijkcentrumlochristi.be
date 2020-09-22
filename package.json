@@ -35,10 +35,6 @@
   "scripts": {
     "serve": "NODE_ENV=development ./node_modules/.bin/gulp serve",
     "build": "NODE_ENV=production ./node_modules/.bin/gulp build",
-    "deploy": "./deploy.sh",
-    "bump-patch": "npm version patch; git push origin --tags; git push",
-    "bump-minor": "npm version minor; git push origin --tags; git push",
-    "bump-major": "npm version major; git push origin --tags; git push",
-    "prettier-all": "prettier --write \"**/*.{css,scss,js,json,md}\""
+    "deploy": "remote/deploy.sh"
   }
 }
