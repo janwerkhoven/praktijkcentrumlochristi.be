@@ -57,6 +57,11 @@ a.button {
     color: #fff;
     background: rgba($link-color, 0.5);
   }
+  &[disabled] {
+    filter: saturate(0.1) opacity(0.4);
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
 }
 h1 {
   color: $pcl-red-3;
