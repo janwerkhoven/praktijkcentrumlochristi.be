@@ -8,39 +8,22 @@ function init() {
 }
 
 function prepareBookModal() {
-  const bookButtons = document.querySelectorAll("button.book");
-  const yesButtons = document.querySelectorAll("#modal button.yes");
-  const overlay = document.querySelector("#modal .overlay");
-  const noButton1 = document.querySelector(`#modal #question-1 button.no`);
-  const noButton2 = document.querySelector(`#modal #question-2 button.no`);
-  const noButton3 = document.querySelector(`#modal #question-3 button.no`);
-
-  bookButtons.forEach((button) => {
+  document.querySelectorAll("button.book").forEach((button) => {
     button.onclick = function () {
       openModal();
     };
   });
 
-  yesButtons.forEach((button) => {
-    button.onclick = function () {
-      showModalContent("call-us");
-    };
-  });
-
-  noButton1.onclick = () => {
-    showModalContent("question-2");
-  };
-
-  noButton2.onclick = () => {
-    showModalContent("question-3");
-  };
-
-  noButton3.onclick = () => {
-    showModalContent("book-online");
-  };
-
-  overlay.onclick = () => {
+  document.querySelector("#modal .overlay").onclick = () => {
     closeModal();
+  };
+
+  document.querySelector(`#modal #question-1 button.yes`).onclick = () => {
+    showModalContent("infectious");
+  };
+
+  document.querySelector(`#modal #question-1 button.no`).onclick = () => {
+    showModalContent("not-infectious");
   };
 }
 

@@ -63,11 +63,6 @@ body.show-modal {
     animation-timing-function: $easeOutExpo;
     animation-fill-mode: forwards;
     section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
       padding: 0;
       background: white;
       box-shadow: 0 4px 4px rgba(black, 0.2);
@@ -87,11 +82,6 @@ body.show-modal {
       }
       .buttons {
         display: flex;
-        width: 160px;
-        button {
-          display: block;
-          flex: 1;
-        }
         button + button {
           margin-left: 10px;
         }
@@ -105,6 +95,9 @@ body.show-modal {
       }
       .buttons + ul {
         margin: 40px 0 0;
+      }
+      ul + .buttons {
+        margin-top: 22px;
       }
     }
   }
