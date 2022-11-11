@@ -9,13 +9,32 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     env:
-      PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
+      PRIVATE_KEY: ${{secrets.SSH_FRANKFURT}}
+      URL: bot@frankfurt.floatplane.dev
+      ROOT: /var/www/praktijkcentrumlochristi.be
     steps:
       - uses: actions/checkout@v2
+
+      # Create directory for SSH
       - run: mkdir ~/.ssh
-      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/bot@frankfurt.floatplane.dev'
+
+      # Add the private key of the restricted bot user on the remote server
+      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+
+      # Configure SSH to always use the custom key, so we don't have to do ssh -i
+      - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+
+      # Add the remote server to trusted hosts
       - run: ssh-keyscan -H frankfurt.floatplane.dev > ~/.ssh/known_hosts
-      - run: chmod 0755 ~/.ssh/
-      - run: chmod 600 ~/.ssh/bot@frankfurt.floatplane.dev
-      - run: chmod 644 ~/.ssh/known_hosts
-      - run: remote/deploy.sh
+
+      # Set all SSH file permissions
+      - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
+
+      # First, check out the latest production branch on the remote.
+      - run: ssh $URL "cd $ROOT; git checkout production; git pull"
+
+      # Install Node and dependencies
+      - run: ssh $URL "cd $ROOT; nvm install; yarn install"
+
+      # Build Ember app, once built Fastboot restarts
+      - run: ssh $URL "cd $ROOT; yarn build"
